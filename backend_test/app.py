@@ -16,19 +16,24 @@ def predict():
     data = request.get_json() 
     data = {k: np.float32(v) for k, v in request.json.items()}
         
-    print(data) 
+    # print(data) 
     df = pd.DataFrame(data, columns=columns, index=[0])
-    print(df)
+    # print(df)
     
     df = df.apply(pd.to_numeric, errors='coerce') 
     print(df) 
-    
+
+    # Fill NaN values with 0
+    df = df.fillna(0)
+
+    X = df.values
     pred = model.predict(df)
     print(pred)
     
     # Return result
     result = {'prediction': int(pred[0])} 
     return jsonify(result)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
