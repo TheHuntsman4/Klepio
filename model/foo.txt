@@ -1,0 +1,94 @@
+Column: Chief complaint
+No : 0
+Pain : 1
+Swelling : 2
+Ulcer : 3
+Column: Nature of Pain
+No : 0
+aching : 1
+burning : 2
+stabbing : 3
+throbbing : 4
+Column: Severity of pain
+Mild : 0
+Moderate : 1
+No : 2
+Severe : 3
+Column: Onset  and mode of pain
+No : 0
+The pain came suddenly : 1
+lingering pain : 2
+Column: Factors which worsens the pain
+Cold foods or drinks : 0
+Eating : 1
+Hot foods or drinks : 2
+Laying down : 3
+No : 4
+Column: Is the swelling painful?
+No : 0
+Yes : 1
+Column: Has the swelling changed since it was first noticed? If yes how quickly?
+No : 0
+Rapid : 1
+Slow : 2
+Column: Does the swelling changes during normal activities such as eating, speaking, etc?
+No : 0
+Column: Is the ulcer painful
+No : 0
+Yes : 1
+Column: Is there bleeding from the ulcer
+No : 0
+Column: Is there discharge from the ulcer?
+No : 0
+Column: Is there a foul smell from the ulcer?
+No : 0
+Column: Do the ulcers interfere with daily activities
+No : 0
+Yes : 1
+Column: Has the ulcer changed since first noticed?
+No : 0
+Yes : 1
+Column: Have you had similar ulcers?
+No : 0
+Yes : 1
+Column: Final Diagnosis
+Acute Gingivitis : 0
+Acute Gingivitis  : 1
+Acute Irreversible Pulpitis : 2
+Acute Irreversible Pulpitis  : 3
+Acute Irreversible Pulpitis with acute Gingivitis  : 4
+Acute Irreversible Pulpitis with extra oral swelling  : 5
+Acute Irreversible Pulpitiswith extra oral swelling : 6
+Acute Reversible Pulpitis : 7
+Acute Reversible Pulpitis  : 8
+Acute Reversible Pulpitis with food impaction : 9
+Acute Reversible Pulpitis with food impaction  : 10
+Acute Reversible Pulpitis with swelling  : 11
+Aphthous ulcer : 12
+Aphthous ulcer  : 13
+Chronic Gingivitis  : 14
+Chronic Gingivitis with teeth mobility  : 15
+Chronic destructive periodontitis : 16
+Dental abcess : 17
+Dental abcess  : 18
+Dental caries with food impaction : 19
+Denture sore ulcer  : 20
+Extra oral swelling with Acute Irreversible Pulpitis : 21
+Food impaction : 22
+Pericoronitis : 23
+Periodontal abcess : 24
+Periodontitis : 25
+Periodontitis  : 26
+Pulpitis with swelling  : 27
+Column: Is there bleeding in the gums?
+No : 0
+Yes : 1
+Column: Is there pain in the gums
+No : 0
+Yes : 1
+Column: If any tooth/teeth is/are mobile, what is the degree of mobility
+1 : 0
+2 : 1
+3 : 2
+No : 3
+Chief complaint	
