@@ -6,7 +6,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load model and encoder
-model = pickle.load(open('rf_model.pkl','rb')) 
+model = pickle.load(open('DentAIv1.pkl','rb')) 
 encoder = pickle.load(open('encoder.pkl','rb'))
 
 @app.route('/predict', methods=['POST'])
