@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "pontiac_black";
+  src: url("./fonts/Fontspring-DEMO-pontiac_black.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
