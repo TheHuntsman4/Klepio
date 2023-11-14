@@ -7,7 +7,11 @@ module.exports = {
       },
       fontFamily: {
         pontiac: ["pontiac_black", "sans-serif"],
+        poppins: ["Poppins-Regular","sans-serif"],
       },
+      backgroundImage:{
+        LandingBG:"url('./assets/nonicons/DesktopLandingBG.png')"
+      }
     },
   },
   plugins: [],
