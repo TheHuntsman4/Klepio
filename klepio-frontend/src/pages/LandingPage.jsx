@@ -1,25 +1,41 @@
-import React from 'react';
-import { useMediaQuery } from 'react-responsive';
-import LandingBGDesktop from '../assets/nonicons/DesktopLandingBG.png';
-import LandingBGMobile from '../assets/nonicons/MobileLandingBG.png';
+import React from "react";
+import { useMediaQuery } from "react-responsive";
+import LandingBGDesktop from "../assets/nonicons/DesktopLandingBG2.png";
+import LandingBGMobile from "../assets/nonicons/MobileLandingBG.png";
+import KlepioLogo from "../assets/nonicons/KlepioLogo.svg";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const isDesktopOrLaptop = useMediaQuery({
-    query: '(min-device-width: 1224px)'
+    query: "(min-device-width: 1224px)",
   });
-  const isBigScreen = useMediaQuery({ query: '(min-device-width: 1824px)' });
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
-  const isPortrait = useMediaQuery({ query: '(orientation: portrait)' });
-  const isRetina = useMediaQuery({ query: '(min-resolution: 2dppx)' });
+  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  const isRetina = useMediaQuery({ query: "(min-resolution: 2dppx)" });
 
   return (
-    <div className='relative h-screen w-full'>
-      <img src={isDesktopOrLaptop ? LandingBGDesktop : LandingBGMobile} className='absolute top-0 left-0 w-full h-screen object-cover -z-10'/>
-      <div className='w-full h-screen flex flex-col justify-center items-center z-10 text-black'>
-        this is some text
+    <div className="relative h-screen w-full">
+      <img
+        src={isDesktopOrLaptop ? LandingBGDesktop : LandingBGMobile}
+        className="absolute top-0 left-0 w-full h-screen object-cover -z-10"
+      />
+      <div className="w-full h-screen flex flex-col justify-center items-center pb-12 md:pb-24 z-10 text-black">
+        <img
+          src={KlepioLogo}
+          alt="Logo"
+          width={isDesktopOrLaptop ? 950 : 300}
+        />
+        <div className="text-center font-poppins text-2xl md:text-4xl mt-16">
+          Dental care that’s always one step ahead
+        </div>
+        <div className="w-full flex lg:flex-row flex-col-reverse justify-center items-center">
+          <button className="mt-12 bg-black rounded-full px-12 py-4 text-white"><Link to="/home">Home</Link></button>
+          <button className="mt-12 bg-black rounded-full px-12 py-4 text-white"><Link to="/diagnose">Start Diagnosis</Link></button>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default LandingPage;

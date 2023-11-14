@@ -1,5 +1,4 @@
 import React from "react";
-import './home.css';
 import TeethSVG from "../assets/icons/Teeth.svg";
 import SinglePhone from "../assets/nonicons/SinglePhone.png";
 

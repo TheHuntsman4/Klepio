@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { NavBar } from "./components";
-import { LandingPage, HomePage } from "./pages";
+import { LandingPage, HomePage, DiagnoseStartPage } from "./pages";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<HomePage />} />
+        <Route path="/diagnose" element={<DiagnoseStartPage />} />
       </Routes>
     </BrowserRouter>
   );
