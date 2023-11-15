@@ -76,14 +76,14 @@ const results = [
     description:
       "An aphthous ulcer is a common, painful sore or lesion that forms on the mucous membranes of the mouth including the gums and tongue. The exact cause is unknown but they often form after an injury, periods of stress, lack of sleep, or vitamin/nutrient deficiencies. Aphthous ulcers are not contagious. Symptoms include a tingling or burning sensation followed by a painful sore with a white or yellow center and red rim. They will heal on their own within a week or two. Treatments can provide pain relief and speed healing.",
     image:
-      "https://www.researchgate.net/publication/354865230/figure/fig2/AS:1072740337475586@1632772635732/nflammation-process-induced-Recurrent-Aphthous-Stomatitis-RAS.png",
+      "https://as1.ftcdn.net/v2/jpg/05/13/10/46/1000_F_513104665_NNq9thEPRwPJ4uZ7A70Itq7VBGPyrQfT.jpg",
   },
   {
     title: "Aphthous Ulcer",
     description:
       "An aphthous ulcer is a common, painful sore or lesion that forms on the mucous membranes of the mouth including the gums and tongue. The exact cause is unknown but they often form after an injury, periods of stress, lack of sleep, or vitamin/nutrient deficiencies. Aphthous ulcers are not contagious. Symptoms include a tingling or burning sensation followed by a painful sore with a white or yellow center and red rim. They will heal on their own within a week or two. Treatments can provide pain relief and speed healing.",
     image:
-      "https://www.researchgate.net/publication/354865230/figure/fig2/AS:1072740337475586@1632772635732/nflammation-process-induced-Recurrent-Aphthous-Stomatitis-RAS.png",
+      "https://as1.ftcdn.net/v2/jpg/05/13/10/46/1000_F_513104665_NNq9thEPRwPJ4uZ7A70Itq7VBGPyrQfT.jpg",
   },
   {
     title: "Chronic Gingivitis",
@@ -131,7 +131,7 @@ const results = [
     title: "Denture sore ulcer",
     description:
       "A denture sore is an ulcer or sore spot that forms on the gums or other oral tissues underneath or due to ill-fitting dentures. Causes include inadequate fit, poor denture hygiene, accumulation of food, and tissue irritation or trauma from the dentures. Symptoms include pain, swelling, redness or bleeding in the sore area. Treatment requires adjusting the dentures for proper fit and keeping them and the mouth very clean. The ulcer heals once friction and irritation from the dentures is minimized.",
-    image: "",
+    image: "https://www.researchgate.net/publication/354865230/figure/fig2/AS:1072740337475586@1632772635732/nflammation-process-induced-Recurrent-Aphthous-Stomatitis-RAS.png",
   },
   {
     title: "Extra oral swelling with Acute Irreversible Pulpitis",
