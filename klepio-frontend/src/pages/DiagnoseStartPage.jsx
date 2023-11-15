@@ -1,12 +1,11 @@
-import React from "react";
-import ResultDecoder from "../services/resultDecoder";
+import React from 'react'
 
 const DiagnoseStartPage = () => {
   return (
     <div>
-      <ResultDecoder />
+      
     </div>
-  );
-};
+  )
+}
 
-export default DiagnoseStartPage;
+export default DiagnoseStartPage
