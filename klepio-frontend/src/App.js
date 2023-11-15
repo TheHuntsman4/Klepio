@@ -1,16 +1,32 @@
 import React from "react";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { NavBar, NavDesktop, NavMobile } from "./components";
-import { LandingPage, HomePage, DiagnoseStartPage } from "./pages";
+import { LandingPage, HomePage, DiagnoseStartPage, ResultsPage } from "./pages";
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBar />
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<HomePage />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <NavBar />
+              <LandingPage />
+            </>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <>
+              <NavBar />
+              <LandingPage />
+            </>
+          }
+        />
         <Route path="/diagnose" element={<DiagnoseStartPage />} />
+        <Route path="/results" element={<ResultsPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -4,7 +4,6 @@ import LandingBGDesktop from "../assets/nonicons/DesktopLandingBG2.png";
 import LandingBGMobile from "../assets/nonicons/MobileLandingBG.png";
 import KlepioLogo from "../assets/nonicons/KlepioLogoBlack.svg";
 import { Link } from "react-router-dom";
-import { NavBar } from "../components";
 
 const LandingPage = () => {
   const isDesktopOrLaptop = useMediaQuery({
