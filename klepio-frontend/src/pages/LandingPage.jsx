@@ -15,7 +15,6 @@ const LandingPage = () => {
 
   return (
     <>
-      <NavBar />
       <div className="relative h-screen w-full">
         <img
           src={isDesktopOrLaptop ? LandingBGDesktop : LandingBGMobile}

@@ -1,66 +1,42 @@
-import { useRef } from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Squash as Hamburger } from "hamburger-react";
-import { routes } from "./routes";
+
+import KlepioLogo from "../assets/nonicons/KlepioLogoWhite.svg";
 
 const NavMobile = () => {
   const [isOpen, setOpen] = useState(false);
-  const wrapperRef = useRef(null);
-
-  const handleClickOutside = (event) => {
-    if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
-      setOpen(false);
-    }
-  };
 
   return (
-    <div className="lg:hidden">
-      <Hamburger toggled={isOpen} size={20} toggle={setOpen} />
+    <nav className="relative">
+      <div className="flex items-center justify-between px-12 py-4 bg-black text-white">
+        <img src={KlepioLogo} alt="Logo" width={220} />
+        <Hamburger toggled={isOpen} toggle={setOpen} />
+      </div>
 
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
-          className="fixed left-0 shadow-4xl right-0 top-[3.5rem] p-5 pt-0 bg-neutral-950 border-b border-b-white/20"
-          ref={wrapperRef}
-          onClick={handleClickOutside}
-        >
-          <ul className="grid gap-2">
-            {routes.map((route, idx) => {
-              const { Icon } = route;
-              return (
-                <motion.li
-                  key={route.title}
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 20,
-                    delay: 0.1 + idx / 10
-                  }}
-                  className="w-full p-[0.08rem] rounded-xl bg-gradient-to-tr from-neutral-800 via-neutral-950 to-neutral-700"
-                >
-                  <a
-                    onClick={() => setOpen(prev => !prev)}
-                    className={"flex items-center justify-between w-full p-5 rounded-xl bg-neutral-950"}
-                    href={route.href}
-                  >
-                    <span className="flex gap-1 text-lg">
-                      {route.title}
-                    </span>
-                    <Icon className="text-xl" />
-                  </a>
-                </motion.li>
-              );
-            })}
-          </ul>
-        </motion.div>
-      )}
-    </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.2 }}
+            className="fixed top-0 left-0 w-full h-full bg-black z-10 flex flex-col justify-center items-center text-xl font-bold text-white"
+          >
+            <button
+              className="absolute top-0 right-0 p-4"
+              onClick={() => setOpen(false)}
+            >
+              Close
+            </button>
+            <Link to="/home">Home</Link>
+            <Link to="/">DentAI</Link>
+            <Link to="/">About Us</Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 };
 
