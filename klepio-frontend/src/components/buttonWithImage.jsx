@@ -1,13 +1,13 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 
-const ButtonWithImage = ({ title, image, id }) => {
+const ButtonWithImage = ({onClick, title, image, id }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-width: 1024px)",
   });
-
   return (
     <button
+    onClick={onClick}
       id={id}
       className="w-full flex flex-col items-center p-4 bg-white rounded-3xl sm:p-8"
     >

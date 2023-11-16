@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
@@ -11,14 +12,22 @@ const DiagnoseStartPage = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1224px)",
   });
-  // let answers = {};
+  const [chiefComplaint, setChiefComplaint] = useState("");
+  let answers = {};
+  const onContinue = () => {
+    console.log({
+      ...answers,
+      "Chief complaint": chiefComplaint,
+    });
+  };
   const options = [
-    { title: "Pain", image: pain },
+    { title: "Pain", image: pain, code: "1" },
     {
       title: "Swelling",
       image: swelling,
+      code: "2",
     },
-    { title: "Ulcer", image: ulcer },
+    { title: "Ulcer", image: ulcer, code: "3" },
   ];
   const lastOption = options[options.length - 1];
   return (
@@ -28,7 +37,7 @@ const DiagnoseStartPage = () => {
         alt="bg"
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       />
-      <div className="w-full h-screen flex flex-col justify-center items-center">
+      <div className="w-full h-screen flex flex-col justify-center items-center font-poppins text-black">
         <p className="text-3xl font-poppins mb-12 text-center">
           1. Which of the following <b>best describes</b> the chief problem you
           are facing?
@@ -42,6 +51,7 @@ const DiagnoseStartPage = () => {
                     id={key}
                     title={option.title}
                     image={option.image}
+                    onClick={() => setChiefComplaint(option.code)}
                   />
                 );
               })}
@@ -56,6 +66,7 @@ const DiagnoseStartPage = () => {
                     id={key}
                     title={option.title}
                     image={option.image}
+                    onClick={() => setChiefComplaint(option.code)}
                   />
                 );
               })}
@@ -65,10 +76,17 @@ const DiagnoseStartPage = () => {
                 id="last"
                 title={lastOption.title}
                 image={lastOption.image}
+                onClick={() => setChiefComplaint(lastOption.code)}
               />
             </div>
           </>
         )}
+        <button
+          className="bg-black lg:my-12 px-12 py-4 rounded-full text-white"
+          onClick={onContinue}
+        >
+          Continue
+        </button>
       </div>
     </div>
   );
