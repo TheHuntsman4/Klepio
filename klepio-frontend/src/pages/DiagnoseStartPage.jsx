@@ -10,7 +10,7 @@ import ulcer from "../assets/icons/questionnairepng/ulcert.png";
 
 const DiagnoseStartPage = () => {
   const isDesktopOrLaptop = useMediaQuery({
-    query: "(min-device-width: 1224px)",
+    query: "(min-device-width: 1024px)",
   });
   const [chiefComplaint, setChiefComplaint] = useState("");
   let answers = {};
