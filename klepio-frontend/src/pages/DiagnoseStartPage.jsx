@@ -30,11 +30,11 @@ const DiagnoseStartPage = () => {
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       />
       <div className="w-full h-screen flex flex-col justify-center items-center">
-        <p className="text-3xl font-poppins mb-12">
+        <p className="text-3xl font-poppins mb-12 text-center">
           1. Which of the following <b>best describes</b> the chief problem you are
           facing?
         </p>
-        <div className="w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
+        <div className="w-5/6 lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
           {options.map((option, key) => {
             return (
               <ButtonWithImage
