@@ -3,6 +3,7 @@ No : 0
 Pain : 1
 Swelling : 2
 Ulcer : 3
+
 Column: Nature of Pain
 No : 0
 aching : 1

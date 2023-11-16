@@ -1,17 +1,16 @@
-import React from "react";
-import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import React from 'react'
+import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
 import { ButtonWithImage } from "../components";
-import options from './options'
 
-const DiagnoseStartPage = () => {
+
+const QuestionPage1 = ({options,question,answers}) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1024px)",
   });
   const [chiefComplaint, setChiefComplaint] = useState("");
-  let answers = {};
   const onContinue = () => {
     console.log({
       ...answers,
@@ -28,8 +27,7 @@ const DiagnoseStartPage = () => {
       />
       <div className="w-full h-screen flex flex-col justify-center items-center font-poppins text-black">
         <p className="text-3xl font-poppins mb-12 text-center">
-          1. Which of the following <b>best describes</b> the chief problem you
-          are facing?
+          {question}
         </p>
         {isDesktopOrLaptop ? (
           <>
@@ -79,6 +77,6 @@ const DiagnoseStartPage = () => {
       </div>
     </div>
   );
-};
+}
 
-export default DiagnoseStartPage;
+export default QuestionPage1
