@@ -1,21 +1,19 @@
-import React from 'react'
-import { useState } from 'react';
-import { useMediaQuery } from 'react-responsive';
+import React from "react";
+// import { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
 import { ButtonWithImage } from "../components";
 
-
-const QuestionPage1 = ({options,question,answers}) => {
+const QuestionPage1 = ({ options, question, state, setState, answers }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1024px)",
   });
-  const [chiefComplaint, setChiefComplaint] = useState("");
+const onSelect=(value)=>{
+  setState(value)
+}
   const onContinue = () => {
-    console.log({
-      ...answers,
-      "Chief complaint": chiefComplaint,
-    });
+    console.log(state);
   };
   const lastOption = options[options.length - 1];
   return (
@@ -26,9 +24,7 @@ const QuestionPage1 = ({options,question,answers}) => {
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       />
       <div className="w-full h-screen flex flex-col justify-center items-center font-poppins text-black">
-        <p className="text-3xl font-poppins mb-12 text-center">
-          {question}
-        </p>
+        <p className="text-3xl font-poppins mb-12 text-center">{question}</p>
         {isDesktopOrLaptop ? (
           <>
             <div className="w-5/6 lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
@@ -38,7 +34,7 @@ const QuestionPage1 = ({options,question,answers}) => {
                     id={key}
                     title={option.title}
                     image={option.image}
-                    onClick={() => setChiefComplaint(option.code)}
+                    onClick={() => onSelect(option.code)}
                   />
                 );
               })}
@@ -53,7 +49,7 @@ const QuestionPage1 = ({options,question,answers}) => {
                     id={key}
                     title={option.title}
                     image={option.image}
-                    onClick={() => setChiefComplaint(option.code)}
+                    onClick={() => onSelect(option.code)}
                   />
                 );
               })}
@@ -63,7 +59,7 @@ const QuestionPage1 = ({options,question,answers}) => {
                 id="last"
                 title={lastOption.title}
                 image={lastOption.image}
-                onClick={() => setChiefComplaint(lastOption.code)}
+                onClick={() => onSelect(lastOption.code)}
               />
             </div>
           </>
@@ -77,6 +73,6 @@ const QuestionPage1 = ({options,question,answers}) => {
       </div>
     </div>
   );
-}
+};
 
-export default QuestionPage1
+export default QuestionPage1;
