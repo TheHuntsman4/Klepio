@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+// import { useNavigate, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
@@ -14,6 +14,7 @@ const ResultsPage = () => {
     <div className="relative h-full min-h-screen w-full">
       <img
         src={isDesktopOrLaptop ? DeskTopGreenBG : MobileGreenBG}
+        alt="bg"
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       />
       <div className="z-10 flex flex-col gap-4 lg:gap-10 justify-center items-center">
@@ -26,7 +27,7 @@ const ResultsPage = () => {
         <div className=" w-5/6 lg:w-1/2 bg-white rounded-2xl flex justify-center items-center text-black font-poppins text-smmd lg:text-2xl">
           <div className="flex flex-col-reverse lg:flex-row justify-center items-center p-12">
             <p className="text-start">{diagnosis.description}</p>
-            <img src={diagnosis.image} width={500} />
+            <img src={diagnosis.image} width={500} alt="diagram" />
           </div>
         </div>
         <p className=" w-5/6 lg:w-1/2 font-poppins text-xl text-center">

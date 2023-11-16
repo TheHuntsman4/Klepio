@@ -1,12 +1,20 @@
-import React from 'react'
+import React from "react";
+import { useMediaQuery } from "react-responsive";
 
-const buttonWithImage = ({title,image}) => {
+const ButtonWithImage = ({ title, image, id }) => {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 1224px)",
+  });
+
   return (
-    <button className='w-full h-full flex flex-col justify-center items-center text-2xl font-poppins font-semibold bg-white'>
-      <img src={image} width={100} alt={title}/>
+    <button
+      id={id}
+      className="w-full h-full flex flex-col justify-center items-center text-2xl font-poppins font-semibold bg-white"
+    >
+      <img src={image} width={isDesktopOrLaptop ? 150 : 75} alt={title} />
       <p>{title}</p>
     </button>
-  )
-}
+  );
+};
 
-export default buttonWithImage
+export default ButtonWithImage;
