@@ -13,15 +13,14 @@ const DiagnoseStartPage = () => {
   });
   // let answers = {};
   const options = [
-    { title: "Pain",
-     image: pain 
-    },
+    { title: "Pain", image: pain },
     {
       title: "Swelling",
       image: swelling,
     },
     { title: "Ulcer", image: ulcer },
   ];
+  const lastOption = options[options.length - 1];
   return (
     <div className="relative h-full min-h-screen w-full">
       <img
@@ -31,20 +30,45 @@ const DiagnoseStartPage = () => {
       />
       <div className="w-full h-screen flex flex-col justify-center items-center">
         <p className="text-3xl font-poppins mb-12 text-center">
-          1. Which of the following <b>best describes</b> the chief problem you are
-          facing?
+          1. Which of the following <b>best describes</b> the chief problem you
+          are facing?
         </p>
-        <div className="w-5/6 lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
-          {options.map((option, key) => {
-            return (
+        {isDesktopOrLaptop ? (
+          <>
+            <div className="w-5/6 lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
+              {options.map((option, key) => {
+                return (
+                  <ButtonWithImage
+                    id={key}
+                    title={option.title}
+                    image={option.image}
+                  />
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="w-5/6 lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
+              {options.slice(0, -1).map((option, key) => {
+                return (
+                  <ButtonWithImage
+                    id={key}
+                    title={option.title}
+                    image={option.image}
+                  />
+                );
+              })}
+            </div>
+            <div className="w-1/2 flex justify-center items-center p-4">
               <ButtonWithImage
-                id={key}
-                title={option.title}
-                image={option.image}
+                id="last"
+                title={lastOption.title}
+                image={lastOption.image}
               />
-            );
-          })}
-        </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
