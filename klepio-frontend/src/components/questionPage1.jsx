@@ -20,7 +20,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
         alt="bg"
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       />
-      <div className="w-full h-screen flex flex-col justify-center items-center font-poppins text-black">
+      <div className="w-full h-full flex flex-col justify-center items-center font-poppins text-black">
         <p className="text-3xl font-poppins mb-12 text-center">{question}</p>
         {isDesktopOrLaptop ? (
           <>

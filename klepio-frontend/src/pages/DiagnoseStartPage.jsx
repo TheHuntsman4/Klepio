@@ -17,14 +17,33 @@ const DiagnoseStartPage = () => {
   const onContinue = () => {
     answers = { ...answers, "Chief complaint": chiefComplaint };
     console.log(answers);
+    const NavigatePain = () => {
+      navigate("/diagnose/pain", { state: { answers: answers } });
+    };
+    const NavigateSwelling = () => {
+      navigate("/diagnose/swelling", { state: { answers: answers } });
+    };
+    const NavigateUlcer = () => {
+      navigate("/diagnose/ulcer", { state: { answers: answers } });
+    };
     if (answers.hasOwnProperty("Chief complaint")) {
-      NavigatePain();
+      switch (chiefComplaint) {
+        case "1":
+          NavigatePain();
+          break;
+        case "2":
+          NavigateSwelling();
+          break;
+        case "3":
+          NavigateUlcer();
+          break;
+      }
+    } else {
+      console.log("selection an option");
     }
   };
   const lastOption = options[options.length - 1];
-  const NavigatePain = () => {
-    navigate("/diagnose/pain", { state: { answers: answers } });
-  };
+
   return (
     <div className="relative h-full min-h-screen w-full">
       <img
