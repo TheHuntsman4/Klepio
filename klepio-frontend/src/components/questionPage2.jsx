@@ -93,7 +93,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
           </>
         )}
         <button
-          className="bg-black lg:my-12 px-12 py-4 rounded-full text-white"
+          className="bg-black mt-12 lg:my-12 px-12 py-4 rounded-full text-white"
           onClick={onContinue}
         >
           Continue

@@ -20,7 +20,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
         className="absolute top-0 left-0 w-full h-full object-cover -z-10"
       />
       <div className="w-full h-full flex flex-col justify-center items-center font-poppins text-black">
-        <p className="text-3xl font-poppins mb-12 text-center">{question}</p>
+        <p className="text-3xl font-poppins my-12 text-center">{question}</p>
         {isDesktopOrLaptop ? (
           <>
             <div className="w-5/6 lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
@@ -76,7 +76,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
           </>
         )}
         <button
-          className="bg-black lg:my-12 px-12 py-4 rounded-full text-white"
+          className="bg-black mt-12 lg:my-12 px-12 py-4 rounded-full text-white"
           onClick={onContinue}
         >
           Continue
