@@ -9,6 +9,7 @@ import {
   Pain1,
   Swelling1,
   Ulcer1,
+  Common1,
 } from "./pages";
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route path="/diagnose/pain" element={<Pain1 />} />
         <Route path="/diagnose/swelling" element={<Swelling1 />} />
         <Route path="/diagnose/ulcer" element={<Ulcer1 />} />
+        <Route path="/diagnose/common" element={<Common1 />} />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
     </BrowserRouter>

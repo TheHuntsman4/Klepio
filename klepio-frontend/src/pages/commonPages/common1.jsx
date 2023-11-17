@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const common1 = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const Common1 = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const answers = location?.state.answers;
+  console.log(answers);
+  return <div>hello this is the common page</div>;
+};
 
-export default common1
+export default Common1;
