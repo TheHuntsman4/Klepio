@@ -10,15 +10,18 @@ aching : 1
 burning : 2
 stabbing : 3
 throbbing : 4
+
 Column: Severity of pain
 Mild : 0
 Moderate : 1
 No : 2
 Severe : 3
+
 Column: Onset  and mode of pain
 No : 0
 The pain came suddenly : 1
 lingering pain : 2
+
 Column: Factors which worsens the pain
 Cold foods or drinks : 0
 Eating : 1
