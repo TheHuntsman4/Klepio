@@ -1,17 +1,17 @@
 import React from "react";
-// import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
 import { ButtonWithImage } from "../components";
 
+
 const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1024px)",
   });
-const onSelect=(value)=>{
-  setState(value)
-}
+  const onSelect = (value) => {
+    setState(value);
+  };
   const lastOption = options[options.length - 1];
   return (
     <div className="relative h-full min-h-screen w-full">

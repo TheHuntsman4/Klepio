@@ -4,26 +4,27 @@ import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
 import { ButtonWithImage } from "../components";
-import options from './options'
+import options from "./options";
 import { useNavigate } from "react-router-dom";
 
 const DiagnoseStartPage = () => {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1024px)",
   });
   const [chiefComplaint, setChiefComplaint] = useState("");
   let answers = {};
   const onContinue = () => {
-    console.log({
-      ...answers,
-      "Chief complaint": chiefComplaint,
-    });
+    answers = { ...answers, "Chief complaint": chiefComplaint };
+    console.log(answers);
+    if (answers.hasOwnProperty("Chief complaint")) {
+      NavigatePain();
+    }
   };
   const lastOption = options[options.length - 1];
-  const NavigatePain=()=>{
-    navigate('/diagnose/pain',{state:answers})
-  }
+  const NavigatePain = () => {
+    navigate("/diagnose/pain", { state: { answers: answers } });
+  };
   return (
     <div className="relative h-full min-h-screen w-full">
       <img
