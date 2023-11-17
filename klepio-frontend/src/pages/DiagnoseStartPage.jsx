@@ -5,8 +5,10 @@ import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
 import { ButtonWithImage } from "../components";
 import options from './options'
+import { useNavigate } from "react-router-dom";
 
 const DiagnoseStartPage = () => {
+  const navigate=useNavigate();
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1024px)",
   });
@@ -19,6 +21,9 @@ const DiagnoseStartPage = () => {
     });
   };
   const lastOption = options[options.length - 1];
+  const NavigatePain=()=>{
+    navigate('/diagnose/pain',{state:answers})
+  }
   return (
     <div className="relative h-full min-h-screen w-full">
       <img
