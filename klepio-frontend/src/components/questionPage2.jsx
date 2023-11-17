@@ -1,17 +1,16 @@
 import React from "react";
-// import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
 import { ButtonWithoutImage } from "../components";
 
-const QuestionPage2 = ({ options, question, state, setState, onContinue }) => {
+const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1024px)",
   });
-const onSelect=(value)=>{
-  setState(value)
-}
+  const onSelect = (value) => {
+    setState(value);
+  };
   const lastOption = options[options.length - 1];
   return (
     <div className="relative h-full min-h-screen w-full">
@@ -30,6 +29,22 @@ const onSelect=(value)=>{
                   <ButtonWithoutImage
                     id={key}
                     title={option.title}
+                    image={option.image}
+                    onClick={() => onSelect(option.code)}
+                  />
+                );
+              })}
+            </div>
+          </>
+        ) : (options.length % 2 === 0) ? (
+          <>
+            <div className="w-5/6 lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
+              {options.map((option, key) => {
+                return (
+                  <ButtonWithoutImage
+                    id={key}
+                    title={option.title}
+                    image={option.image}
                     onClick={() => onSelect(option.code)}
                   />
                 );
@@ -44,6 +59,7 @@ const onSelect=(value)=>{
                   <ButtonWithoutImage
                     id={key}
                     title={option.title}
+                    image={option.image}
                     onClick={() => onSelect(option.code)}
                   />
                 );
@@ -53,6 +69,7 @@ const onSelect=(value)=>{
               <ButtonWithoutImage
                 id="last"
                 title={lastOption.title}
+                image={lastOption.image}
                 onClick={() => onSelect(lastOption.code)}
               />
             </div>
@@ -69,4 +86,4 @@ const onSelect=(value)=>{
   );
 };
 
-export default QuestionPage2;
+export default QuestionPage1;
