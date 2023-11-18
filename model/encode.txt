@@ -111,12 +111,3 @@ Column: If any tooth/teeth is/are mobile, what is the degree of mobility
 3 : 2
 No : 3
 ------------------------------------------------------------
-
-
-      "Is the ulcer painful": pain,
-      "Is there bleeding from the ulcer": bleed,
-      "Is there discharge from the ulcer?": discharge,
-      "Is there a foul smell from the ulcer?": smell,
-      "Do the ulcers interfere with daily activities": acitvity,
-      "Has the ulcer changed since first noticed?": changes,
-      "Have you had similar ulcers?": similar,
