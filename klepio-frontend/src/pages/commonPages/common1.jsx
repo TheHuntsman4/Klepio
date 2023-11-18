@@ -14,27 +14,8 @@ const Common1 = () => {
   const [mobile,setMobile] = useState("");
 
   const onContinueEnd = () => {
-    answers = {
-      ...answers,
-      "Nature of Pain": "0",
-      "Severity of pain": "0",
-      "Onset  and mode of pain": "0",
-      "Factors which worsens the pain": "0",
-      "Is the swelling painful?": pain,
-      "Has the swelling changed since it was first noticed? If yes how quickly?":
-        changes,
-      "Does the swelling changes during normal activities such as eating, speaking, etc?":
-        normal,
-      "Is the ulcer painful": "0",
-      "Is there bleeding from the ulcer": "0",
-      "Is there discharge from the ulcer?": "0",
-      "Is there a foul smell from the ulcer?": "0",
-      "Do the ulcers interfere with daily activities": "0",
-      "Has the ulcer changed since first noticed?": "0",
-      "Have you had similar ulcers?": "0",
-    };
     console.log(answers);
-    navigate("/diagnose/common", { state: { answers: answers } });
+    // navigate("/diagnose/common", { state: { answers: answers } });
   };
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -57,7 +38,7 @@ const Common1 = () => {
           setState={setPain}
           onContinue={onContinue}
           question={
-            "2. Is the swelling painful?"
+            "2. Is there pain in the gums?"
           }
         />
       </div>
@@ -67,13 +48,13 @@ const Common1 = () => {
         }`}
       >
         <QuestionPage2
-          options={options2}
-          state={changes}
-          setState={setChanges}
+          options={options1}
+          state={bleed}
+          setState={setBleed}
           onContinue={onContinue}
           onPrevious={onPrevious}
           question={
-            "3. Has the swelling changed since it was first noticed? If yes how quickly?"
+            "3.Is there bleeding in the gums?"
           }
         />
       </div>
@@ -83,11 +64,11 @@ const Common1 = () => {
         }`}
       >
         <QuestionPage2
-          options={options3}
-          state={normal}
-          setState={setNormal}
+          options={options2}
+          state={mobile}
+          setState={setMobile}
           onContinue={onContinueEnd}
-          question={"4. Does the swelling changes during normal activities such as eating, speaking, etc?"}
+          question={"4. If any tooth/teeth is/are mobile, what is the degree of mobility?"}
         />
       </div>
     </div>
