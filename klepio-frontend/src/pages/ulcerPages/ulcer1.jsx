@@ -85,7 +85,7 @@ const Pain1 = () => {
           options={options}
           state={discharge}
           setState={setDischarge}
-          onContinue={onContinueEnd}
+          onContinue={onContinue}
           question={"4. Is there discharge from the ulcer?"}
         />
       </div>
@@ -98,7 +98,7 @@ const Pain1 = () => {
           options={options}
           state={smell}
           setState={setSmell}
-          onContinue={onContinueEnd}
+          onContinue={onContinue}
           question={"5. Is there foul smell from the ulcer?"}
         />
       </div>
@@ -111,7 +111,7 @@ const Pain1 = () => {
           options={options}
           state={acitvity}
           setState={setActivity}
-          onContinue={onContinueEnd}
+          onContinue={onContinue}
           question={"6. Do the ulcers interfere with daily activities?"}
         />
       </div>
@@ -124,7 +124,7 @@ const Pain1 = () => {
           options={options}
           state={changes}
           setState={setChanges}
-          onContinue={onContinueEnd}
+          onContinue={onContinue}
           question={"7. Has the ulcer changed since it was first noticed?"}
         />
       </div>
