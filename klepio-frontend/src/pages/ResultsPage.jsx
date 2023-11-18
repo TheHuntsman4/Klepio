@@ -25,7 +25,7 @@ const ResultsPage = () => {
         <p className="mt-12 font-poppins text-xl lg:text-3xl text-center">
           You have been diagnosed with
         </p>
-        <h1 className="w-full text-black text-3xl lg:text-7xl font-pontiac font-bold text-center">
+        <h1 className="w-full text-black text-3xl lg:text-7xl font-pontiac font-bold text-center px-2">
           {diagnosis.title}
         </h1>
         <div className=" w-5/6 lg:w-1/2 bg-white rounded-2xl flex justify-center items-center text-black font-poppins text-smmd lg:text-2xl">
@@ -40,7 +40,7 @@ const ResultsPage = () => {
           a professional dentist or medical practitioner, Klepio’s results can
           not substitute true diagnosis
         </p>
-        <div className="flex flex-col lg:flex-row justify-center items-center">
+        <div className="flex flex-col lg:flex-row justify-center items-center my-4">
           <button className="bg-black rounded-full my-4 lg:mr-4  px-12 py-4 text-white text-lg">
             <Link to="/diagnose">Retake Test</Link>
           </button>
