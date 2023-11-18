@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { QuestionPage2 } from "../../components";
+import { useMediaQuery } from "react-responsive";
+import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
+import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
 import options1 from "./swellingOptions/swellingOptions1";
 import options2 from "./swellingOptions/swellingOptions2";
 import options3 from "./swellingOptions/swellingOptions3";
@@ -13,6 +16,9 @@ const Swelling1 = () => {
   const [pain, setPain] = useState("");
   const [changes, setChanges] = useState("");
   const [normal, setNormal] = useState("");
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 1024px)",
+  });
 
   const onContinueEnd = () => {
     answers = {
@@ -46,9 +52,14 @@ const Swelling1 = () => {
     console.log("Previous");
   };
   return (
-    <div className="relative bg-klepio-green h-full min-h-screen">
+    <div className="relative h-full min-h-screen">
+      <img
+        src={isDesktopOrLaptop ? DeskTopGreenBG : MobileGreenBG}
+        alt="bg"
+        className="absolute top-0 left-0 w-full h-full min-h-screen object-cover -z-10"
+      />
       <div
-        className={`absolute left-0 w-full bg-klepio-green transition-all duration-500 ease-in-out ${
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
           currentPage === 1 ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -57,9 +68,7 @@ const Swelling1 = () => {
           state={pain}
           setState={setPain}
           onContinue={onContinue}
-          question={
-            "2. Is the swelling painful?"
-          }
+          question={"2. Is the swelling painful?"}
         />
       </div>
       <div
@@ -88,7 +97,9 @@ const Swelling1 = () => {
           state={normal}
           setState={setNormal}
           onContinue={onContinueEnd}
-          question={"4. Does the swelling changes during normal activities such as eating, speaking, etc?"}
+          question={
+            "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
+          }
         />
       </div>
     </div>
