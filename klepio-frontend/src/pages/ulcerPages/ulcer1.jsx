@@ -9,8 +9,12 @@ const Pain1 = () => {
   const location = useLocation();
   let answers = location.state?.answers;
   const [pain, setPain] = useState("");
+  const [bleed, setBleed] = useState("");
+  const [discharge, setDischarge] = useState("");
+  const [smell,setSmell]=useState("")
+  const [acitvity,setActivity]=useState("")
   const [changes, setChanges] = useState("");
-  const [normal, setNormal] = useState("");
+  const [similar, setSimilar] = useState("");
 
   const onContinueEnd = () => {
     answers = {
@@ -19,18 +23,18 @@ const Pain1 = () => {
       "Severity of pain": "0",
       "Onset  and mode of pain": "0",
       "Factors which worsens the pain": "0",
-      "Is the swelling painful?": pain,
+      "Is the swelling painful?": "0",
       "Has the swelling changed since it was first noticed? If yes how quickly?":
-        changes,
+        "0",
       "Does the swelling changes during normal activities such as eating, speaking, etc?":
-        normal,
-      "Is the ulcer painful": "0",
-      "Is there bleeding from the ulcer": "0",
-      "Is there discharge from the ulcer?": "0",
-      "Is there a foul smell from the ulcer?": "0",
-      "Do the ulcers interfere with daily activities": "0",
-      "Has the ulcer changed since first noticed?": "0",
-      "Have you had similar ulcers?": "0",
+        "0",
+      "Is the ulcer painful": pain,
+      "Is there bleeding from the ulcer": bleed,
+      "Is there discharge from the ulcer?": discharge,
+      "Is there a foul smell from the ulcer?": smell,
+      "Do the ulcers interfere with daily activities": acitvity,
+      "Has the ulcer changed since first noticed?": changes,
+      "Have you had similar ulcers?": similar,
     };
     console.log(answers);
     navigate("/diagnose/common", { state: { answers: answers } });
@@ -55,9 +59,7 @@ const Pain1 = () => {
           state={pain}
           setState={setPain}
           onContinue={onContinue}
-          question={
-            "2. Is the swelling painful?"
-          }
+          question={"2. Is the ulcer painful?"}
         />
       </div>
       <div
@@ -67,12 +69,12 @@ const Pain1 = () => {
       >
         <QuestionPage2
           options={options}
-          state={changes}
-          setState={setChanges}
+          state={bleed}
+          setState={setBleed}
           onContinue={onContinue}
           onPrevious={onPrevious}
           question={
-            "3. Has the swelling changed since it was first noticed? If yes how quickly?"
+            "3. Is there bleeding from the ulcer?"
           }
         />
       </div>
@@ -86,7 +88,9 @@ const Pain1 = () => {
           state={normal}
           setState={setNormal}
           onContinue={onContinueEnd}
-          question={"4. Does the swelling changes during normal activities such as eating, speaking, etc?"}
+          question={
+            "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
+          }
         />
       </div>
       <div
@@ -99,7 +103,9 @@ const Pain1 = () => {
           state={normal}
           setState={setNormal}
           onContinue={onContinueEnd}
-          question={"4. Does the swelling changes during normal activities such as eating, speaking, etc?"}
+          question={
+            "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
+          }
         />
       </div>
       <div
@@ -112,7 +118,9 @@ const Pain1 = () => {
           state={normal}
           setState={setNormal}
           onContinue={onContinueEnd}
-          question={"4. Does the swelling changes during normal activities such as eating, speaking, etc?"}
+          question={
+            "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
+          }
         />
       </div>
       <div
@@ -125,7 +133,9 @@ const Pain1 = () => {
           state={normal}
           setState={setNormal}
           onContinue={onContinueEnd}
-          question={"4. Does the swelling changes during normal activities such as eating, speaking, etc?"}
+          question={
+            "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
+          }
         />
       </div>
       <div
