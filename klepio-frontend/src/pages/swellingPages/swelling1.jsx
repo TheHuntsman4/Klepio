@@ -58,7 +58,7 @@ const Pain1 = () => {
           setState={setPain}
           onContinue={onContinue}
           question={
-            "2. How would you best describe the Nature of the Pain you are experiencing?"
+            "2. Is the swelling painful?"
           }
         />
       </div>
@@ -74,7 +74,7 @@ const Pain1 = () => {
           onContinue={onContinue}
           onPrevious={onPrevious}
           question={
-            "3. How would you best describe the Severity of the Pain you are experiencing?"
+            "3. Has the swelling changed since it was first noticed? If yes how quickly?"
           }
         />
       </div>
@@ -88,7 +88,7 @@ const Pain1 = () => {
           state={normal}
           setState={setNormal}
           onContinue={onContinueEnd}
-          question={"4. When did you start experiencing pain?"}
+          question={"4. Does the swelling changes during normal activities such as eating, speaking, etc?"}
         />
       </div>
     </div>
