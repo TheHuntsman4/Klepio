@@ -11,8 +11,8 @@ const Pain1 = () => {
   const [pain, setPain] = useState("");
   const [bleed, setBleed] = useState("");
   const [discharge, setDischarge] = useState("");
-  const [smell,setSmell]=useState("")
-  const [acitvity,setActivity]=useState("")
+  const [smell, setSmell] = useState("");
+  const [acitvity, setActivity] = useState("");
   const [changes, setChanges] = useState("");
   const [similar, setSimilar] = useState("");
 
@@ -73,9 +73,7 @@ const Pain1 = () => {
           setState={setBleed}
           onContinue={onContinue}
           onPrevious={onPrevious}
-          question={
-            "3. Is there bleeding from the ulcer?"
-          }
+          question={"3. Is there bleeding from the ulcer?"}
         />
       </div>
       <div
@@ -85,12 +83,10 @@ const Pain1 = () => {
       >
         <QuestionPage2
           options={options}
-          state={normal}
-          setState={setNormal}
+          state={discharge}
+          setState={setDischarge}
           onContinue={onContinueEnd}
-          question={
-            "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
-          }
+          question={"4. Is there discharge from the ulcer?"}
         />
       </div>
       <div
@@ -100,12 +96,10 @@ const Pain1 = () => {
       >
         <QuestionPage2
           options={options}
-          state={normal}
-          setState={setNormal}
+          state={smell}
+          setState={setSmell}
           onContinue={onContinueEnd}
-          question={
-            "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
-          }
+          question={"5. Is there foul smell from the ulcer?"}
         />
       </div>
       <div
@@ -115,12 +109,10 @@ const Pain1 = () => {
       >
         <QuestionPage2
           options={options}
-          state={normal}
-          setState={setNormal}
+          state={acitvity}
+          setState={setActivity}
           onContinue={onContinueEnd}
-          question={
-            "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
-          }
+          question={"6. Do the ulcers interfere with daily activities?"}
         />
       </div>
       <div
@@ -130,12 +122,10 @@ const Pain1 = () => {
       >
         <QuestionPage2
           options={options}
-          state={normal}
-          setState={setNormal}
+          state={changes}
+          setState={setChanges}
           onContinue={onContinueEnd}
-          question={
-            "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
-          }
+          question={"7. Has the ulcer changed since it was first noticed?"}
         />
       </div>
       <div
@@ -145,8 +135,8 @@ const Pain1 = () => {
       >
         <QuestionPage2
           options={options}
-          state={normal}
-          setState={setNormal}
+          state={similar}
+          setState={setSimilar}
           onContinue={onContinueEnd}
           question={"8. Have you had similar ulcers?"}
         />
