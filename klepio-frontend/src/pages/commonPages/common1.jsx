@@ -20,8 +20,13 @@ const Common1 = () => {
   });
 
   const onContinueEnd = () => {
-    console.log(answers);
-    // navigate("/diagnose/common", { state: { answers: answers } });
+    answers = {
+      ...answers,
+      "Is there bleeding in the gums?": bleed,
+      "Is there pain in the gums": pain,
+      "If any tooth/teeth is/are mobile, what is the degree of mobility": mobile,
+    };
+    console.log(answers)
   };
 
   const [currentPage, setCurrentPage] = useState(1);
