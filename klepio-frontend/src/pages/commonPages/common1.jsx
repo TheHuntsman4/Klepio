@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import axios from "axios";
 import { QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
@@ -19,14 +20,28 @@ const Common1 = () => {
     query: "(min-device-width: 1024px)",
   });
 
-  const onContinueEnd = () => {
+  const onContinueEnd = async () => {
     answers = {
       ...answers,
       "Is there bleeding in the gums?": bleed,
       "Is there pain in the gums": pain,
-      "If any tooth/teeth is/are mobile, what is the degree of mobility": mobile,
+      "If any tooth/teeth is/are mobile, what is the degree of mobility":
+        mobile,
     };
-    console.log(answers)
+
+    console.log(answers);
+
+    try {
+      const response = await axios.post(
+        " http://localhost:5000/predict",
+        answers
+      );
+      const prediction = response.data.prediction;
+      console.log(prediction);
+      navigate("/results", { state: { prediction: prediction } });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const [currentPage, setCurrentPage] = useState(1);

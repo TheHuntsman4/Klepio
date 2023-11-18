@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS;
 import pickle
 import pandas as pd
 import numpy as np
 
 app = Flask(__name__)
+CORS(app, resources={r"/predict": {"origins": "*"}})
 
 # Load model and encoder
 model = pickle.load(open('DentAIv1.pkl','rb')) 
@@ -31,8 +33,14 @@ def predict():
     print(pred)
     
     # Return result
-    result = {'prediction': int(pred[0])} 
-    return jsonify(result)
+    result = {'prediction': int(pred[0])}
+    response=jsonify(result)
+    response.headers.add('Access-Control-Allow-Origin', '*') 
+    return response
+
+@app.route('/predict', methods=['OPTIONS'])  
+def handle_options():
+  return jsonify({})
 
 
 if __name__ == '__main__':

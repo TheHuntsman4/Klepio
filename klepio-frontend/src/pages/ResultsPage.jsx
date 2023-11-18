@@ -1,15 +1,19 @@
 import React from "react";
-// import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
 import { Link } from "react-router-dom";
 import { resultDecoder } from "../services/resultDecoder";
 const ResultsPage = () => {
+  const location=useLocation();
+  const navigate=useNavigate();
+  console.log(location.state?.prediction)
+  const prediction=location.state?.prediction;
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1224px)",
   });
-  const diagnosis = resultDecoder(5);
+  const diagnosis = resultDecoder(prediction);
   return (
     <div className="relative h-full min-h-screen w-full">
       <img
