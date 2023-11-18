@@ -6,7 +6,7 @@ import options2 from "./swellingOptions/swellingOptions2";
 import options3 from "./swellingOptions/swellingOptions3";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const Pain1 = () => {
+const Swelling1 = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let answers = location.state?.answers;
@@ -95,4 +95,4 @@ const Pain1 = () => {
   );
 };
 
-export default Pain1;
+export default Swelling1;
