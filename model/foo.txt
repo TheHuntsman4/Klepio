@@ -28,15 +28,19 @@ Eating : 1
 Hot foods or drinks : 2
 Laying down : 3
 No : 4
+
 Column: Is the swelling painful?
 No : 0
 Yes : 1
+
 Column: Has the swelling changed since it was first noticed? If yes how quickly?
 No : 0
 Rapid : 1
 Slow : 2
+
 Column: Does the swelling changes during normal activities such as eating, speaking, etc?
 No : 0
+
 Column: Is the ulcer painful
 No : 0
 Yes : 1
