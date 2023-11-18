@@ -13,12 +13,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
   };
   const lastOption = options[options.length - 1];
   return (
-    <div className="relative h-full min-h-screen w-full">
-      <img
-        src={isDesktopOrLaptop ? DeskTopGreenBG : MobileGreenBG}
-        alt="bg"
-        className="absolute top-0 left-0 w-full h-full min-h-screen object-cover -z-10"
-      />
+    <div className="relative h-full w-full">
       <div className="w-full h-full flex flex-col justify-center items-center font-poppins text-black">
         <p className="text-3xl font-poppins my-12 lg:mt-24 text-center">{question}</p>
         {isDesktopOrLaptop ? (

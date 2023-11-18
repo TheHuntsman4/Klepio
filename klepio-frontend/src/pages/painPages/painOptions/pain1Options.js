@@ -1,8 +1,8 @@
 import aching from '../../../assets/icons/questionnairepng/achingt.png';
 import burning from '../../../assets/icons/questionnairepng/burning.png';
-import stabbing from '../../../assets/icons/questionnairepng/stabt.png';
+import stabbing from '../../../assets/icons/questionnairepng/stabbing.svg';
 import throbbing from '../../../assets/icons/questionnairepng/throbt.png';
-import electric from '../../../assets/icons/questionnairepng/electrict.png';
+import electric from '../../../assets/icons/questionnairepng/electricsvg.svg';
 import constricting from '../../../assets/icons/questionnairepng/gript.png';
 const options1 = [
   { title: "Aching", image: aching, code: "1" },

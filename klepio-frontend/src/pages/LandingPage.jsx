@@ -29,9 +29,9 @@ const LandingPage = () => {
             Dental care that’s always one step ahead
           </div>
           <div className="w-full flex lg:flex-row flex-col-reverse justify-center items-center">
-            <button className="mt-12 bg-black rounded-full px-12 py-4 text-white">
+            {/* <button className="mt-12 bg-black rounded-full px-12 py-4 text-white">
               <Link to="/home">Home</Link>
-            </button>
+            </button> */}
             <button className="mt-12 bg-black rounded-full px-12 py-4 text-white">
               <Link to="/diagnose">Start Diagnosis</Link>
             </button>

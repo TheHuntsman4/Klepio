@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { QuestionPage1, QuestionPage2 } from "../../components";
+import { useMediaQuery } from "react-responsive";
+import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
+import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
 import options1 from "./painOptions/pain1Options";
 import options2 from "./painOptions/painOptions2";
 import options3 from "./painOptions/painOptions3";
@@ -10,6 +13,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 const Pain1 = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 1024px)",
+  });
   let answers = location.state?.answers;
   const [nature, setNature] = useState("");
   const [severity, setSeverity] = useState("");
@@ -24,8 +30,10 @@ const Pain1 = () => {
       "Onset  and mode of pain": onset,
       "Factors which worsens the pain": worse,
       "Is the swelling painful?": "0",
-      "Has the swelling changed since it was first noticed? If yes how quickly?":"0",
-      "Does the swelling changes during normal activities such as eating, speaking, etc?":"0",
+      "Has the swelling changed since it was first noticed? If yes how quickly?":
+        "0",
+      "Does the swelling changes during normal activities such as eating, speaking, etc?":
+        "0",
       "Is the ulcer painful": "0",
       "Is there bleeding from the ulcer": "0",
       "Is there discharge from the ulcer?": "0",
@@ -37,18 +45,6 @@ const Pain1 = () => {
     console.log(answers);
     navigate("/diagnose/common", { state: { answers: answers } });
   };
-  const onContinue2 = () => {
-    answers = { ...answers, "Nature of Pain": nature };
-    console.log(answers);
-  };
-  const onContinue3 = () => {
-    answers = { ...answers, "Nature of Pain": nature };
-    console.log(answers);
-  };
-  const onContinue4 = () => {
-    answers = { ...answers, "Nature of Pain": nature };
-    console.log(answers);
-  };
   const [currentPage, setCurrentPage] = useState(1);
   const onContinue = () => {
     setCurrentPage(currentPage + 1);
@@ -57,9 +53,14 @@ const Pain1 = () => {
     console.log("Previous");
   };
   return (
-    <div className="relative bg-klepio-green h-full min-h-screen">
+    <div className="relative h-full min-h-screen w-full">
+      <img
+        src={isDesktopOrLaptop ? DeskTopGreenBG : MobileGreenBG}
+        alt="bg"
+        className="absolute top-0 left-0 w-full h-full min-h-screen object-cover -z-10"
+      />
       <div
-        className={`absolute left-0 w-full bg-klepio-green transition-all duration-500 ease-in-out ${
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
           currentPage === 1 ? "translate-x-0" : "-translate-x-full"
         }`}
       >

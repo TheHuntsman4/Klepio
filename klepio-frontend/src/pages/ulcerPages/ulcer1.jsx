@@ -1,7 +1,11 @@
 import React from "react";
 import { useState } from "react";
 import { QuestionPage2 } from "../../components";
+import { useMediaQuery } from "react-responsive";
+import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
+import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
 import options from "./ulcerOptions/ulcerOptions1";
+
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Ulcer1 = () => {
@@ -39,7 +43,9 @@ const Ulcer1 = () => {
     console.log(answers);
     navigate("/diagnose/common", { state: { answers: answers } });
   };
-
+  const isDesktopOrLaptop = useMediaQuery({
+    query: "(min-device-width: 1024px)",
+  });
   const [currentPage, setCurrentPage] = useState(1);
   const onContinue = () => {
     setCurrentPage(currentPage + 1);
@@ -48,9 +54,14 @@ const Ulcer1 = () => {
     console.log("Previous");
   };
   return (
-    <div className="relative bg-klepio-green h-full min-h-screen">
+    <div className="relative h-full min-h-screen">
+      <img
+        src={isDesktopOrLaptop ? DeskTopGreenBG : MobileGreenBG}
+        alt="bg"
+        className="absolute top-0 left-0 w-full h-full min-h-screen object-cover -z-10"
+      />
       <div
-        className={`absolute left-0 w-full bg-klepio-green transition-all duration-500 ease-in-out ${
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
           currentPage === 1 ? "translate-x-0" : "-translate-x-full"
         }`}
       >
