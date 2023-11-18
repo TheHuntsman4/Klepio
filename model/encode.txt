@@ -3,7 +3,7 @@ No : 0
 Pain : 1
 Swelling : 2
 Ulcer : 3
-
+------------------------------------------------------
 Column: Nature of Pain
 No : 0
 aching : 1
@@ -28,7 +28,7 @@ Eating : 1
 Hot foods or drinks : 2
 Laying down : 3
 No : 4
-
+-------------------------------------------------------
 Column: Is the swelling painful?
 No : 0
 Yes : 1
@@ -40,25 +40,32 @@ Slow : 2
 
 Column: Does the swelling changes during normal activities such as eating, speaking, etc?
 No : 0
-
+--------------------------------------------------------
 Column: Is the ulcer painful
 No : 0
 Yes : 1
+
 Column: Is there bleeding from the ulcer
 No : 0
+
 Column: Is there discharge from the ulcer?
 No : 0
+
 Column: Is there a foul smell from the ulcer?
 No : 0
+
 Column: Do the ulcers interfere with daily activities
 No : 0
 Yes : 1
+
 Column: Has the ulcer changed since first noticed?
 No : 0
 Yes : 1
+
 Column: Have you had similar ulcers?
 No : 0
 Yes : 1
+---------------------------------------------------------
 Column: Final Diagnosis
 Acute Gingivitis : 0
 Acute Gingivitis  : 1
@@ -88,15 +95,19 @@ Periodontal abcess : 24
 Periodontitis : 25
 Periodontitis  : 26
 Pulpitis with swelling  : 27
+-----------------------------------------------------------
+
 Column: Is there bleeding in the gums?
 No : 0
 Yes : 1
+
 Column: Is there pain in the gums
 No : 0
 Yes : 1
+
 Column: If any tooth/teeth is/are mobile, what is the degree of mobility
 1 : 0
 2 : 1
 3 : 2
 No : 3
-Chief complaint	
+------------------------------------------------------------
