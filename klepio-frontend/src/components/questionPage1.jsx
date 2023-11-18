@@ -17,7 +17,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
       <img
         src={isDesktopOrLaptop ? DeskTopGreenBG : MobileGreenBG}
         alt="bg"
-        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+        className="absolute top-0 left-0 w-full h-full min-h-screen object-cover -z-10"
       />
       <div className="w-full h-full flex flex-col justify-center items-center font-poppins text-black">
         <p className="text-3xl font-poppins my-12 lg:mt-24 text-center">{question}</p>
