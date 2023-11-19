@@ -1,40 +1,65 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS;
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 import pickle
 import pandas as pd
 import numpy as np
 
-app = Flask(__name__)
-CORS(app, resources={r"/predict": {"origins": "*"}})
+app = FastAPI()
+
+# Enable CORS for all routes
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Load model and encoder
-model = pickle.load(open('DentAIv1.pkl','rb')) 
-@app.route('/predict', methods=['POST'])
-def predict():
-    # Get data
-    columns=['Chief complaint', 'Nature of Pain', 'Severity of pain', 'Onset  and mode of pain', 'Factors which worsens the pain', 'Is the swelling painful?', 'Has the swelling changed since it was first noticed? If yes how quickly?', 'Does the swelling changes during normal activities such as eating, speaking, etc?', 'Is the ulcer painful', 'Is there bleeding from the ulcer', 'Is there discharge from the ulcer?', 'Is there a foul smell from the ulcer?', 'Do the ulcers interfere with daily activities', 'Has the ulcer changed since first noticed?', 'Have you had similar ulcers?', 'Is there bleeding in the gums?', 'Is there pain in the gums', 'If any tooth/teeth is/are mobile, what is the degree of mobility']
-    data = request.get_json() 
-    data = {k: np.float32(v) for k, v in request.json.items()}
-        
-    df = pd.DataFrame(data, columns=columns, index=[0])
-    
-    df = df.apply(pd.to_numeric, errors='coerce')  
+model = pickle.load(open('DentAIv1.pkl', 'rb'))
+
+
+class Item(BaseModel):
+    Chief_complaint: float
+    Nature_of_Pain: float
+    Severity_of_pain: float
+    Onset_and_mode_of_pain: float
+    Factors_which_worsens_the_pain: float
+    Is_the_swelling_painful: float
+    Has_the_swelling_changed_since_it_was_first_noticed: float
+    Does_the_swelling_changes_during_normal_activities: float
+    Is_the_ulcer_painful: float
+    Is_there_bleeding_from_the_ulcer: float
+    Is_there_discharge_from_the_ulcer: float
+    Is_there_a_foul_smell_from_the_ulcer: float
+    Do_the_ulcers_interfere_with_daily_activities: float
+    Has_the_ulcer_changed_since_first_noticed: float
+    Have_you_had_similar_ulcers: float
+    Is_there_bleeding_in_the_gums: float
+    Is_there_pain_in_the_gums: float
+    If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility: float
+
+
+@app.post("/predict")
+async def predict(item: Item):
+    # Convert input data to DataFrame
+    input_data = pd.DataFrame(item.dict(), index=[0])
+
+    # Convert DataFrame columns to numeric
+    input_data = input_data.apply(pd.to_numeric, errors='coerce')
 
     # Fill NaN values with 0
-    df = df.fillna(0)
+    input_data = input_data.fillna(0)
 
-    pred = model.predict(df)
-    
+    # Make predictions using the pre-trained model
+    prediction = int(model.predict(input_data)[0])
+
     # Return result
-    result = {'prediction': int(pred[0])}
-    response=jsonify(result)
-    response.headers.add('Access-Control-Allow-Origin', '*') 
-    return response
-
-@app.route('/predict', methods=['OPTIONS'])  
-def handle_options():
-  return jsonify({})
+    return {"prediction": prediction}
 
 
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.options("/predict")
+async def handle_options(request: Request):
+    return {"message": "Options"}
+
