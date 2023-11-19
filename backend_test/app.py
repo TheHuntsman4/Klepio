@@ -9,8 +9,6 @@ CORS(app, resources={r"/predict": {"origins": "*"}})
 
 # Load model and encoder
 model = pickle.load(open('DentAIv1.pkl','rb')) 
-encoder = pickle.load(open('encoder.pkl','rb'))
-
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get data
@@ -18,19 +16,14 @@ def predict():
     data = request.get_json() 
     data = {k: np.float32(v) for k, v in request.json.items()}
         
-    # print(data) 
     df = pd.DataFrame(data, columns=columns, index=[0])
-    # print(df)
     
-    df = df.apply(pd.to_numeric, errors='coerce') 
-    print(df) 
+    df = df.apply(pd.to_numeric, errors='coerce')  
 
     # Fill NaN values with 0
     df = df.fillna(0)
 
-    X = df.values
     pred = model.predict(df)
-    print(pred)
     
     # Return result
     result = {'prediction': int(pred[0])}
