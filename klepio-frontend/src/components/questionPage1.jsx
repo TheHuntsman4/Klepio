@@ -1,7 +1,5 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
-import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
 import { ButtonWithImage } from "../components";
 
 const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {

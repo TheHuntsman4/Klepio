@@ -23,9 +23,9 @@ const Common1 = () => {
   const onContinueEnd = async () => {
     answers = {
       ...answers,
-      "Is there bleeding in the gums?": bleed,
-      "Is there pain in the gums": pain,
-      "If any tooth/teeth is/are mobile, what is the degree of mobility":
+      "Is_there_bleeding_in_the_gums?": bleed,
+      "Is_there_pain_in_the_gums": pain,
+      "If_any_tooth/teeth_is/are_mobile,_what_is_the_degree_of_mobility":
         mobile,
     };
 
@@ -33,7 +33,7 @@ const Common1 = () => {
 
     try {
       const response = await axios.post(
-        " http://localhost:5000/predict",
+        "http://0.0.0.0:8000/predict",
         answers
       );
       const prediction = response.data.prediction;
