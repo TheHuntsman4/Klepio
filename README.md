@@ -12,8 +12,8 @@ Klepio is a web application designed to assist in diagnosing dental problems usi
 
 The dataset used by Klepio is a custom collection gathered over a month in collaboration with expert dental practitioners. The dataset creation involved:
 
-- Formulating a Comprehensive Questionnaire: A detailed questionnaire was developed, covering various aspects of dental health to ensure a thorough analysis.
-- Research and Iteration: Extensive research was conducted to determine the most relevant questions. The questionnaire underwent several iterations based on feedback from dental professionals, optimizing it for accuracy and effectiveness.
+- **Formulating a Comprehensive Questionnaire**: A detailed questionnaire was developed, covering various aspects of dental health to ensure a thorough analysis.
+- **Research and Iteration**: Extensive research was conducted to determine the most relevant questions. The questionnaire underwent several iterations based on feedback from dental professionals, optimizing it for accuracy and effectiveness.
 
 This collaborative effort with dental practitioners ensures that Klepio's AI model is trained on a robust dataset, providing reliable and precise diagnoses.
 
@@ -23,4 +23,11 @@ This collaborative effort with dental practitioners ensures that Klepio's AI mod
 - **User-Friendly Interface:** Simple and intuitive web interface for users to answer questions and receive instant feedback.
 - **Comprehensive Diagnoses:** Covers a wide range of dental conditions, ensuring a thorough evaluation.
 
-# Getting Started
+## Getting Started
+
+### Online
+
+1.Visit the Klepio website at [https://klepio.vercel.app/](https://klepio.vercel.app/)
+2.Use the simple UI and select the symptoms.
+3.Receive an instant assessment/diagnoses based on the AI analysis.
+4.Download a PDF of the results.  
