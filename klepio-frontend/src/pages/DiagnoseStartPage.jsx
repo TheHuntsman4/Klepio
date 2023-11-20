@@ -15,7 +15,7 @@ const DiagnoseStartPage = () => {
   const [chiefComplaint, setChiefComplaint] = useState("");
   let answers = {};
   const onContinue = () => {
-    answers = { ...answers, "Chief complaint": chiefComplaint };
+    answers = { ...answers, "Chief_complaint": chiefComplaint };
     console.log(answers);
     const NavigatePain = () => {
       navigate("/diagnose/pain", { state: { answers: answers } });
@@ -26,7 +26,7 @@ const DiagnoseStartPage = () => {
     const NavigateUlcer = () => {
       navigate("/diagnose/ulcer", { state: { answers: answers } });
     };
-    if (answers.hasOwnProperty("Chief complaint")) {
+    if (answers.hasOwnProperty("Chief_complaint")) {
       switch (chiefComplaint) {
         case "1":
           NavigatePain();

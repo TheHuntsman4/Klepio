@@ -33,7 +33,7 @@ const Common1 = () => {
 
     try {
       const response = await axios.post(
-        "http://0.0.0.0:8000/predict",
+        "https://klepio-backend.onrender.com/predict",
         answers
       );
       const prediction = response.data.prediction;

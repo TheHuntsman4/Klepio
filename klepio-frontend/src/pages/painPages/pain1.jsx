@@ -25,22 +25,23 @@ const Pain1 = () => {
   const onContinueEnd = () => {
     answers = {
       ...answers,
-      "Nature of Pain": nature,
-      "Severity of pain": severity,
-      "Onset  and mode of pain": onset,
-      "Factors which worsens the pain": worse,
-      "Is the swelling painful?": "0",
-      "Has the swelling changed since it was first noticed? If yes how quickly?":
-        "0",
-      "Does the swelling changes during normal activities such as eating, speaking, etc?":
-        "0",
-      "Is the ulcer painful": "0",
-      "Is there bleeding from the ulcer": "0",
-      "Is there discharge from the ulcer?": "0",
-      "Is there a foul smell from the ulcer?": "0",
-      "Do the ulcers interfere with daily activities": "0",
-      "Has the ulcer changed since first noticed?": "0",
-      "Have you had similar ulcers?": "0",
+      "Nature_of_Pain": nature,
+      "Severity_of_pain": severity,
+      "Onset_and_mode_of_pain": onset,
+      "Factors_which_worsens_the_pain": worse,
+      "Is_the_swelling_painful": "0",
+      "Has_the_swelling_changed_since_it_was_first_noticed": "0",
+      "Does_the_swelling_changes_during_normal_activities": "0",
+      "Is_the_ulcer_painful": "0",
+      "Is_there_bleeding_from_the_ulcer": "0",
+      "Is_there_discharge_from_the_ulcer": "0",
+      "Is_there_a_foul_smell_from_the_ulcer": "0",
+      "Do_the_ulcers_interfere_with_daily_activities": "0",
+      "Has_the_ulcer_changed_since_first_noticed": "0",
+      "Have_you_had_similar_ulcers": "0",
+      "Is_there_bleeding_in_the_gums": "0",
+      "Is_there_pain_in_the_gums": "0",
+      "If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility": "0"
     };
     console.log(answers);
     navigate("/diagnose/common", { state: { answers: answers } });

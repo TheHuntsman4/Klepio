@@ -23,22 +23,20 @@ const Ulcer1 = () => {
   const onContinueEnd = () => {
     answers = {
       ...answers,
-      "Nature of Pain": "0",
-      "Severity of pain": "0",
-      "Onset  and mode of pain": "0",
-      "Factors which worsens the pain": "0",
-      "Is the swelling painful?": "0",
-      "Has the swelling changed since it was first noticed? If yes how quickly?":
-        "0",
-      "Does the swelling changes during normal activities such as eating, speaking, etc?":
-        "0",
-      "Is the ulcer painful": pain,
-      "Is there bleeding from the ulcer": bleed,
-      "Is there discharge from the ulcer?": discharge,
-      "Is there a foul smell from the ulcer?": smell,
-      "Do the ulcers interfere with daily activities": acitvity,
-      "Has the ulcer changed since first noticed?": changes,
-      "Have you had similar ulcers?": similar,
+      "Nature_of_Pain": "0",
+      "Severity_of_pain": "0",
+      "Onset_and_mode_of_pain": "0",
+      "Factors_which_worsens_the_pain": "0",
+      "Is_the_swelling_painful": "0",
+      "Has_the_swelling_changed_since_it_was_first_noticed": "0",
+      "Does_the_swelling_changes_during_normal_activities": "0",
+      "Is_the_ulcer_painful": pain,
+      "Is_there_bleeding_from_the_ulcer": bleed,
+      "Is_there_discharge_from_the_ulcer": discharge,
+      "Is_there_a_foul_smell_from_the_ulcer": smell,
+      "Do_the_ulcers_interfere_with_daily_activities": acitvity,
+      "Has_the_ulcer_changed_since_first_noticed": changes,
+      "Have_you_had_similar_ulcers": similar
     };
     console.log(answers);
     navigate("/diagnose/common", { state: { answers: answers } });
