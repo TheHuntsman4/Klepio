@@ -1,7 +1,6 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import DeskTopGreenBG from "../assets/nonicons/DesktopFullGreenBG.png";
-import MobileGreenBG from "../assets/nonicons/MobileFullGreenBG.png";
+
 import { ButtonWithoutImage } from "../components";
 
 const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
@@ -13,11 +12,11 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
   };
   const lastOption = options[options.length - 1];
   return (
-    <div className="h-full min-h-screen w-full">
-      <div className="w-full h-full flex flex-col justify-center items-center font-poppins text-black">
+    <div className="h-full w-full">
+      <div className={`w-full ${isDesktopOrLaptop ? "h-full" : "h-screen" } flex flex-col justify-center items-center font-poppins text-black`}>
         <p className="text-3xl font-poppins mb-12 text-center">{question}</p>
         {isDesktopOrLaptop ? (
-          options.length == 2 ? (
+          options.length === 2 ? (
             <>
               <div className="w-5/6 lg:w-1/2 grid grid-cols-2 justify-center items-center gap-4 z-20">
                 {options.map((option, key) => {
