@@ -3,14 +3,16 @@ import { useMediaQuery } from "react-responsive";
 import LandingBGDesktop from "../assets/nonicons/DesktopLandingBG2.png";
 import LandingBGMobile from "../assets/nonicons/MobileLandingBG.png";
 import KlepioLogo from "../assets/nonicons/KlepioLogoBlack.svg";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const LandingPage = () => {
+  const naviagte = useNavigate();
+  const onContinue = () => {
+    naviagte("/diagnose");
+  };
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1224px)",
   });
-  const isBigScreen = useMediaQuery({ query: "(min-device-width: 1824px)" });
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   return (
     <>
@@ -32,8 +34,8 @@ const LandingPage = () => {
             {/* <button className="mt-12 bg-black rounded-full px-12 py-4 text-white">
               <Link to="/home">Home</Link>
             </button> */}
-            <button className="mt-12 bg-black rounded-full px-12 py-4 text-white">
-              <Link to="/diagnose">Start Diagnosis</Link>
+            <button className="mt-12 bg-black rounded-full px-12 py-4 text-white" onClick={onContinue}>
+              Start Diagnosis
             </button>
           </div>
         </div>
