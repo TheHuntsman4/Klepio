@@ -19,18 +19,10 @@ const Common1 = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1024px)",
   });
-
-  const onContinueEnd = async () => {
-    answers = {
-      ...answers,
-      "Is_there_bleeding_in_the_gums?": bleed,
-      "Is_there_pain_in_the_gums": pain,
-      "If_any_tooth/teeth_is/are_mobile,_what_is_the_degree_of_mobility":
-        mobile,
-    };
-
-    console.log(answers);
-
+  const [loading, setLoading] = useState(false);
+  const fetchData = async () => {
+    setLoading(true);
+    console.log("useEffect is running");
     try {
       const response = await axios.post(
         "https://klepio-backend.onrender.com/predict",
@@ -41,7 +33,22 @@ const Common1 = () => {
       navigate("/results", { state: { prediction: prediction } });
     } catch (error) {
       console.error(error);
+      setLoading(false);
     }
+  };
+
+  const onContinueEnd = async () => {
+    answers = {
+      ...answers,
+      "Is_there_bleeding_in_the_gums": bleed,
+      "Is_there_pain_in_the_gums": pain,
+      "If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility":
+        mobile,
+    };
+    console.log("entering fetchData");
+    fetchData();
+
+    console.log(answers);
   };
 
   const [currentPage, setCurrentPage] = useState(1);
