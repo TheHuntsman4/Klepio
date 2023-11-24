@@ -1,7 +1,7 @@
-import deg0 from "../../../assets/icons/questionnaire/degree0.svg";
-import deg1 from "../../../assets/icons/questionnaire/degree0.svg";
-import deg2 from "../../../assets/icons/questionnaire/degree1";
-import deg3 from "../../../assets/icons/questionnaire/degree3";
+import deg0 from "../../../assets/icons/questionnaire/deg0.svg";
+import deg1 from "../../../assets/icons/questionnaire/deg0.svg";
+import deg2 from "../../../assets/icons/questionnaire/deg1.svg";
+import deg3 from "../../../assets/icons/questionnaire/deg3.svg";
 
 const options2 = [
   { title: "No", image: deg0, code: "0" },

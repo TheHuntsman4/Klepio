@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import { QuestionPage2 } from "../../components";
+import { QuestionPage1, QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
@@ -97,7 +97,7 @@ const Common1 = () => {
           currentPage === 3 ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <QuestionPage2
+        <QuestionPage1
           options={options2}
           state={mobile}
           setState={setMobile}
