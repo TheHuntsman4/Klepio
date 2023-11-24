@@ -1,7 +1,7 @@
 # Klepio- Dental Care That's Always One Step Ahead
 
 <p align="center">
-<img src="https://github.com/TheHuntsman4/Klepio/blob/main/assets/nonicons/Landing.png" alt="Klepio Logo" width="200">
+<img src="https://github.com/TheHuntsman4/Klepio/blob/main/assets/nonicons/Landing.png" alt="Klepio Logo" width="400">
 </p>
 
 ## Overview
