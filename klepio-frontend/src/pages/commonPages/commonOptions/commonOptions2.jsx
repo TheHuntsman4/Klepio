@@ -1,6 +1,6 @@
 import deg0 from "../../../assets/icons/questionnaire/deg0.svg";
-import deg1 from "../../../assets/icons/questionnaire/deg0.svg";
-import deg2 from "../../../assets/icons/questionnaire/deg1.svg";
+import deg1 from "../../../assets/icons/questionnaire/deg1.svg";
+import deg2 from "../../../assets/icons/questionnaire/degree2.svg";
 import deg3 from "../../../assets/icons/questionnaire/deg3.svg";
 
 const options2 = [
