@@ -24,13 +24,21 @@ const Common1 = () => {
     setLoading(true);
     console.log("useEffect is running");
     try {
+      // const response = await axios.post(
+      //   "https://klepio-backend.onrender.com/predict",
+      //   answers
+      // );
       const response = await axios.post(
-        "https://klepio-backend.onrender.com/predict",
+        "http://127.0.0.1:5000/predict",
         answers
       );
       const prediction = response.data.prediction;
       console.log(prediction);
-      navigate("/results", { state: { prediction: prediction } });
+      if (prediction==undefined){
+        console.log("something went wrong");
+      }
+      else{navigate("/results", { state: { prediction: prediction } });}
+      
     } catch (error) {
       console.error(error);
       setLoading(false);
