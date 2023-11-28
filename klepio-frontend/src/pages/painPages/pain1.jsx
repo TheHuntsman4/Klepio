@@ -4,10 +4,10 @@ import { QuestionPage1, QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
-import options1 from "./painOptions/pain1Options";
-import options2 from "./painOptions/painOptions2";
-import options3 from "./painOptions/painOptions3";
-import options4 from "./painOptions/painOptions4";
+import options1 from "../../services/painOptions/pain1Options";
+import options2 from "../../services/painOptions/painOptions2";
+import options3 from "../../services/painOptions/painOptions3";
+import options4 from "../../services/painOptions/painOptions4";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Pain1 = () => {

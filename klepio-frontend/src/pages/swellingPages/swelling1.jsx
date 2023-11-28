@@ -4,9 +4,9 @@ import { QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
-import options1 from "./swellingOptions/swellingOptions1";
-import options2 from "./swellingOptions/swellingOptions2";
-import options3 from "./swellingOptions/swellingOptions3";
+import options1 from "../../services/swellingOptions/swellingOptions1";
+import options2 from "../../services/swellingOptions/swellingOptions2";
+import options3 from "../../services/swellingOptions/swellingOptions3";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Swelling1 = () => {

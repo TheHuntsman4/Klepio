@@ -4,7 +4,7 @@ import { QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
-import options from "./ulcerOptions/ulcerOptions1";
+import options from "../../services/ulcerOptions/ulcerOptions1";
 
 import { useLocation, useNavigate } from "react-router-dom";
 

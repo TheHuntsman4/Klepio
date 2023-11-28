@@ -5,8 +5,8 @@ import { QuestionPage1, QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
-import options1 from "./commonOptions/commonOptions1";
-import options2 from "./commonOptions/commonOptions2";
+import options1 from "../../services/commonOptions/commonOptions1";
+import options2 from "../../services/commonOptions/commonOptions2";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Common1 = () => {
@@ -24,12 +24,8 @@ const Common1 = () => {
     setLoading(true);
     console.log("useEffect is running");
     try {
-      // const response = await axios.post(
-      //   "https://klepio-backend.onrender.com/predict",
-      //   answers
-      // );
       const response = await axios.post(
-        "http://127.0.0.1:5000/predict",
+        "http://127.0.0.1:8000/predict",
         answers
       );
       const prediction = response.data.prediction;
