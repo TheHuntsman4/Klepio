@@ -28,7 +28,7 @@ const Common1 = () => {
       If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility: mobile,
     };
     console.log("entering fetchData");
-    let results=fetchData(answers);
+    let results=FetchData(answers);
     console.log(results)
     console.log(answers);
   };
