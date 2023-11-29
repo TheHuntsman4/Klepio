@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import axios from "axios";
+import FetchData from "../../services/fetchData";
 import { QuestionPage1, QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
@@ -20,26 +20,6 @@ const Common1 = () => {
     query: "(min-device-width: 1024px)",
   });
   const [loading, setLoading] = useState(false);
-  const fetchData = async () => {
-    setLoading(true);
-    console.log("useEffect is running");
-    try {
-        "https://klepio-backend-experimental.onrender.com/predict",
-        answers
-      );
-      const prediction = response.data.prediction;
-      console.log(prediction);
-      if (prediction == undefined) {
-        console.log("something went wrong");
-      } else {
-        navigate("/results", { state: { prediction: prediction } });
-      }
-    } catch (error) {
-      console.error(error);
-      setLoading(false);
-    }
-  };
-
   const onContinueEnd = async () => {
     answers = {
       ...answers,
@@ -48,8 +28,8 @@ const Common1 = () => {
       If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility: mobile,
     };
     console.log("entering fetchData");
-    fetchData();
-
+    let results=fetchData(answers);
+    console.log(results)
     console.log(answers);
   };
 
