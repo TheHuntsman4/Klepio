@@ -29,4 +29,8 @@ This collaborative effort with dental practitioners ensures that Klepio's AI mod
 3. Receive an instant assessment/diagnoses based on the AI analysis.
 4. Download a PDF of the results.(Work.In.Progress)
 
-**WARNING: DUE TO SOME CONSTRAINTS THE RESPONSES MAY BE DELAYED DURING INITIAL USE OF THE SITE**    
+## TROUBLESHOOTING
+
+1. 'Continue' button doesn't work
+
+        Fix: Wait for approximately 30 seconds and try clicking the button again.  
