@@ -1,6 +1,5 @@
 import axios from 'axios'
 const FetchData = async (answers) => {
-  console.log("useEffect is running");
   try {
     const response = await axios.post(
       "https://klepio-backend-experimental.onrender.com/predict",
