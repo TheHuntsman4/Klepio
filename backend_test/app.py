@@ -17,7 +17,7 @@ app.add_middleware(
 )
 
 # Load model and encoder
-model = pickle.load(open('DentAIv1.pkl', 'rb'))
+model = pickle.load(open('DentAIv3.pkl', 'rb'))
 
 
 class Item(BaseModel):
@@ -54,11 +54,10 @@ async def predict(item: Item):
 
     # Make predictions using the pre-trained model
     prediction = int(model.predict(input_data)[0])
-    pred_probability=int(model.predict_proba(input_data))
-    confidence=np.max(pred_probability)
+    # pred_probability=int(model.predict_proba(input_data))
+    # confidence=np.max(pred_probability)
     # Return result
-    return {"prediction": prediction,
-            "confidence":confidence,}
+    return {"prediction": prediction,}
 
 
 @app.options("/predict")

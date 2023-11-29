@@ -5,8 +5,8 @@ import { QuestionPage1, QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
-import options1 from "./commonOptions/commonOptions1";
-import options2 from "./commonOptions/commonOptions2";
+import options1 from "../../services/commonOptions/commonOptions1";
+import options2 from "../../services/commonOptions/commonOptions2";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Common1 = () => {
@@ -24,13 +24,16 @@ const Common1 = () => {
     setLoading(true);
     console.log("useEffect is running");
     try {
-      const response = await axios.post(
         "https://klepio-backend-experimental.onrender.com/predict",
         answers
       );
       const prediction = response.data.prediction;
       console.log(prediction);
-      navigate("/results", { state: { prediction: prediction } });
+      if (prediction == undefined) {
+        console.log("something went wrong");
+      } else {
+        navigate("/results", { state: { prediction: prediction } });
+      }
     } catch (error) {
       console.error(error);
       setLoading(false);
@@ -40,10 +43,9 @@ const Common1 = () => {
   const onContinueEnd = async () => {
     answers = {
       ...answers,
-      "Is_there_bleeding_in_the_gums": bleed,
-      "Is_there_pain_in_the_gums": pain,
-      "If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility":
-        mobile,
+      Is_there_bleeding_in_the_gums: bleed,
+      Is_there_pain_in_the_gums: pain,
+      If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility: mobile,
     };
     console.log("entering fetchData");
     fetchData();
