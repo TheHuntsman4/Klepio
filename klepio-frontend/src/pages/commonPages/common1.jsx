@@ -30,11 +30,11 @@ const Common1 = () => {
       );
       const prediction = response.data.prediction;
       console.log(prediction);
-      if (prediction==undefined){
+      if (prediction == undefined) {
         console.log("something went wrong");
+      } else {
+        navigate("/results", { state: { prediction: prediction } });
       }
-      else{navigate("/results", { state: { prediction: prediction } });}
-      
     } catch (error) {
       console.error(error);
       setLoading(false);
@@ -44,10 +44,9 @@ const Common1 = () => {
   const onContinueEnd = async () => {
     answers = {
       ...answers,
-      "Is_there_bleeding_in_the_gums": bleed,
-      "Is_there_pain_in_the_gums": pain,
-      "If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility":
-        mobile,
+      Is_there_bleeding_in_the_gums: bleed,
+      Is_there_pain_in_the_gums: pain,
+      If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility: mobile,
     };
     console.log("entering fetchData");
     fetchData();

@@ -8,6 +8,7 @@ import options1 from "../../services/swellingOptions/swellingOptions1";
 import options2 from "../../services/swellingOptions/swellingOptions2";
 import options3 from "../../services/swellingOptions/swellingOptions3";
 import { useLocation, useNavigate } from "react-router-dom";
+import fetchData from "../../services/fetchData";
 
 const Swelling1 = () => {
   const navigate = useNavigate();
@@ -36,10 +37,14 @@ const Swelling1 = () => {
       "Is_there_a_foul_smell_from_the_ulcer": "0",
       "Do_the_ulcers_interfere_with_daily_activities": "0",
       "Has_the_ulcer_changed_since_first_noticed": "0",
-      "Have_you_had_similar_ulcers": "0"
+      "Have_you_had_similar_ulcers": "0",
+      "Is_there_bleeding_in_the_gums": "0",
+      "Is_there_pain_in_the_gums": "0",
+      "If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility": "0",
     };
     console.log(answers);
-    navigate("/diagnose/common", { state: { answers: answers } });
+    // navigate("/diagnose/common", { state: { answers: answers } });
+    fetchData(answers);
   };
 
   const [currentPage, setCurrentPage] = useState(1);

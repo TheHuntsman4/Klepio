@@ -5,7 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
 import options from "../../services/ulcerOptions/ulcerOptions1";
-
+import fetchData from "../../services/fetchData";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Ulcer1 = () => {
@@ -36,10 +36,14 @@ const Ulcer1 = () => {
       "Is_there_a_foul_smell_from_the_ulcer": smell,
       "Do_the_ulcers_interfere_with_daily_activities": acitvity,
       "Has_the_ulcer_changed_since_first_noticed": changes,
-      "Have_you_had_similar_ulcers": similar
+      "Have_you_had_similar_ulcers": similar,
+      "Is_there_bleeding_in_the_gums": "0",
+      "Is_there_pain_in_the_gums": "0",
+      "If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility": "0",
     };
     console.log(answers);
-    navigate("/diagnose/common", { state: { answers: answers } });
+    let results=fetchData(answers);
+    console.log(results)
   };
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1024px)",
