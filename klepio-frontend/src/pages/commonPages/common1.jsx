@@ -24,8 +24,7 @@ const Common1 = () => {
     setLoading(true);
     console.log("useEffect is running");
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/predict",
+        "https://klepio-backend-experimental.onrender.com/predict",
         answers
       );
       const prediction = response.data.prediction;
