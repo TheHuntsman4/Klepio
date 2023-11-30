@@ -1,10 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { QuestionPage2 } from "../../components";
+import { QuestionPage1 ,QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
 import options from "../../services/ulcerOptions/ulcerOptions1";
+import painOptions1 from '../../services/painOptions/pain1Options'
+import painOptions2 from '../../services/painOptions/painOptions2'
+import painOptions3 from '../../services/painOptions/painOptions3'
+import painOptions4 from '../../services/painOptions/painOptions4'
 import fetchData from "../../services/fetchData";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -13,6 +17,10 @@ const Ulcer1 = () => {
   const location = useLocation();
   let answers = location.state?.answers;
   const [pain, setPain] = useState("");
+  const [nature, setNature] = useState("");
+  const [severity, setSeverity] = useState("");
+  const [onset, setOnset] = useState("");
+  const [worse, setWorse] = useState("");
   const [bleed, setBleed] = useState("");
   const [discharge, setDischarge] = useState("");
   const [smell, setSmell] = useState("");
@@ -24,10 +32,10 @@ const Ulcer1 = () => {
   const onContinueEnd = async () => {
     answers = {
       ...answers,
-      Nature_of_Pain: "0",
-      Severity_of_pain: "0",
-      Onset_and_mode_of_pain: "0",
-      Factors_which_worsens_the_pain: "0",
+      Nature_of_Pain: nature,
+      Severity_of_pain: severity,
+      Onset_and_mode_of_pain: onset,
+      Factors_which_worsens_the_pain: worse,
       Is_the_swelling_painful: "0",
       Has_the_swelling_changed_since_it_was_first_noticed: "0",
       Does_the_swelling_changes_during_normal_activities: "0",
@@ -43,7 +51,7 @@ const Ulcer1 = () => {
       If_any_tooth_teeth_is_are_mobile_what_is_the_degree_of_mobility: "0",
     };
     console.log(answers);
-    const response = await fetchData(answers)
+    const response = await fetchData(answers);
     setPrediction(response);
   };
   const isDesktopOrLaptop = useMediaQuery({
@@ -157,8 +165,65 @@ const Ulcer1 = () => {
           options={options}
           state={similar}
           setState={setSimilar}
-          onContinue={onContinueEnd}
+          onContinue={onContinue}
           question={"8. Have you had similar ulcers?"}
+        />
+      </div>
+      <div
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
+          currentPage === 8 ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <QuestionPage1
+          options={painOptions1}
+          state={nature}
+          setState={setNature}
+          onContinue={onContinue}
+          question={
+            "8. How would you best describe the Nature of the Pain you are experiencing?"
+          }
+        />
+      </div>
+      <div
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
+          currentPage === 9 ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <QuestionPage1
+          options={painOptions2}
+          state={nature}
+          setState={setSeverity}
+          onContinue={onContinue}
+          onPrevious={onPrevious}
+          question={
+            "9. How would you best describe the Severity of the Pain you are experiencing?"
+          }
+        />
+      </div>
+      <div
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
+          currentPage === 10 ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <QuestionPage1
+          options={painOptions3}
+          state={nature}
+          setState={setOnset}
+          onContinue={onContinue}
+          question={"10. When did you start experiencing pain?"}
+        />
+      </div>
+      <div
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
+          currentPage === 11 ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <QuestionPage2
+          options={painOptions4}
+          state={nature}
+          setState={setWorse}
+          onContinue={onContinueEnd}
+          question={"11. Which among the following Worsens the Pain?"}
         />
       </div>
     </div>
