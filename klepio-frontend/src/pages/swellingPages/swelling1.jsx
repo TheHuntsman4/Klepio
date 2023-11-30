@@ -131,7 +131,7 @@ const Swelling1 = () => {
           setState={setNature}
           onContinue={onContinue}
           question={
-            "2. How would you best describe the Nature of the Pain you are experiencing?"
+            "5. How would you best describe the Nature of the Pain you are experiencing?"
           }
         />
       </div>
@@ -147,7 +147,7 @@ const Swelling1 = () => {
           onContinue={onContinue}
           onPrevious={onPrevious}
           question={
-            "3. How would you best describe the Severity of the Pain you are experiencing?"
+            "6. How would you best describe the Severity of the Pain you are experiencing?"
           }
         />
       </div>
@@ -161,7 +161,7 @@ const Swelling1 = () => {
           state={nature}
           setState={setOnset}
           onContinue={onContinue}
-          question={"4. When did you start experiencing pain?"}
+          question={"7. When did you start experiencing pain?"}
         />
       </div>
       <div
@@ -174,7 +174,7 @@ const Swelling1 = () => {
           state={nature}
           setState={setWorse}
           onContinue={onContinueEnd}
-          question={"5. Which among the following Worsens the Pain?"}
+          question={"8. Which among the following Worsens the Pain?"}
         />
       </div>
     </div>
