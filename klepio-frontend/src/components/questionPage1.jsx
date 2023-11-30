@@ -12,7 +12,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
   const lastOption = options[options.length - 1];
   return (
     <div className="relative h-full w-full">
-      <div className={`w-full ${isDesktopOrLaptop ? "h-full" : "h-screen" } flex flex-col justify-center items-center font-poppins text-black`}>
+      <div className={`w-full ${isDesktopOrLaptop ? "h-screen" : "h-screen" } flex flex-col justify-center items-center font-poppins text-black`}>
         <p className="text-3xl font-poppins my-12 lg:mt-24 text-center">{question}</p>
         {isDesktopOrLaptop ? (
           <>
