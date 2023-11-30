@@ -42,7 +42,6 @@ function App() {
         <Route path="/diagnose/pain3" element={<Pain3 />} />
         <Route path="/diagnose/swelling" element={<Swelling1 />} />
         <Route path="/diagnose/ulcer" element={<Ulcer1 />} />
-        <Route path="/diagnose/common" element={<Common1 />} />
         <Route path="/results" element={<ResultsPage />} />
       </Routes>
     </BrowserRouter>
