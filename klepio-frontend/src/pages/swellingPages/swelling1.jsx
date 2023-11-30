@@ -1,12 +1,16 @@
 import React from "react";
 import { useState,useEffect } from "react";
-import { QuestionPage2 } from "../../components";
+import { QuestionPage1,QuestionPage2 } from "../../components";
 import { useMediaQuery } from "react-responsive";
 import DeskTopGreenBG from "../../assets/nonicons/DesktopFullGreenBG.png";
 import MobileGreenBG from "../../assets/nonicons/MobileFullGreenBG.png";
 import options1 from "../../services/swellingOptions/swellingOptions1";
 import options2 from "../../services/swellingOptions/swellingOptions2";
 import options3 from "../../services/swellingOptions/swellingOptions3";
+import painOptions1 from '../../services/painOptions/pain1Options'
+import painOptions2 from '../../services/painOptions/painOptions2'
+import painOptions3 from '../../services/painOptions/painOptions3'
+import painOptions4 from '../../services/painOptions/painOptions4'
 import { useLocation, useNavigate } from "react-router-dom";
 import fetchData from "../../services/fetchData";
 
@@ -14,6 +18,10 @@ const Swelling1 = () => {
   const navigate = useNavigate();
   const location = useLocation();
   let answers = location.state?.answers;
+  const [nature, setNature] = useState("");
+  const [severity, setSeverity] = useState("");
+  const [onset, setOnset] = useState("");
+  const [worse, setWorse] = useState("");
   const [pain, setPain] = useState("");
   const [changes, setChanges] = useState("");
   const [normal, setNormal] = useState("");
@@ -25,10 +33,10 @@ const Swelling1 = () => {
   const onContinueEnd = async () => {
     answers = {
       ...answers,
-      Nature_of_Pain: "0",
-      Severity_of_pain: "0",
-      Onset_and_mode_of_pain: "0",
-      Factors_which_worsens_the_pain: "0",
+      Nature_of_Pain: nature,
+      Severity_of_pain: severity,
+      Onset_and_mode_of_pain: onset,
+      Factors_which_worsens_the_pain: worse,
       Is_the_swelling_painful: pain,
       Has_the_swelling_changed_since_it_was_first_noticed: changes,
       Does_the_swelling_changes_during_normal_activities: normal,
@@ -45,6 +53,7 @@ const Swelling1 = () => {
     };
     console.log(answers);
     const response = await fetchData(answers);
+    console.log(response)
     setPrediction(response);
   };
   useEffect(() => {
@@ -105,10 +114,67 @@ const Swelling1 = () => {
           options={options3}
           state={normal}
           setState={setNormal}
-          onContinue={onContinueEnd}
+          onContinue={onContinue}
           question={
             "4. Does the swelling changes during normal activities such as eating, speaking, etc?"
           }
+        />
+      </div>
+      <div
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
+          currentPage === 4 ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <QuestionPage1
+          options={painOptions1}
+          state={nature}
+          setState={setNature}
+          onContinue={onContinue}
+          question={
+            "2. How would you best describe the Nature of the Pain you are experiencing?"
+          }
+        />
+      </div>
+      <div
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
+          currentPage === 5 ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <QuestionPage1
+          options={painOptions2}
+          state={nature}
+          setState={setSeverity}
+          onContinue={onContinue}
+          onPrevious={onPrevious}
+          question={
+            "3. How would you best describe the Severity of the Pain you are experiencing?"
+          }
+        />
+      </div>
+      <div
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
+          currentPage === 6 ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <QuestionPage1
+          options={painOptions3}
+          state={nature}
+          setState={setOnset}
+          onContinue={onContinue}
+          question={"4. When did you start experiencing pain?"}
+        />
+      </div>
+      <div
+        className={`absolute left-0 w-full transition-all duration-500 ease-in-out ${
+          currentPage === 7 ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <QuestionPage2
+          options={painOptions4}
+          state={nature}
+          setState={setWorse}
+          onContinue={onContinueEnd}
+          question={"5. Which among the following Worsens the Pain?"}
         />
       </div>
     </div>
