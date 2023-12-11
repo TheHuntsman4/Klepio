@@ -12,8 +12,14 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
   const lastOption = options[options.length - 1];
   return (
     <div className="relative h-full w-full">
-      <div className={`w-full ${isDesktopOrLaptop ? "h-screen" : "h-screen" } flex flex-col justify-center items-center font-poppins text-black`}>
-        <p className="text-3xl font-poppins my-12 lg:mt-24 text-center">{question}</p>
+      <div
+        className={`w-full ${
+          isDesktopOrLaptop ? "h-screen" : "h-screen"
+        } flex flex-col justify-center items-center font-poppins text-black`}
+      >
+        <p className="text-3xl font-poppins my-12 lg:mt-24 text-center">
+          {question}
+        </p>
         {isDesktopOrLaptop ? (
           <>
             <div className="w-5/6 lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
@@ -29,7 +35,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
               })}
             </div>
           </>
-        ) : (options.length % 2 === 0) ? (
+        ) : options.length % 2 === 0 ? (
           <>
             <div className="w-5/6 lg:w-1/2 grid grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4 z-20">
               {options.map((option, key) => {
@@ -68,12 +74,21 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
             </div>
           </>
         )}
-        <button
-          className="bg-black my-12 lg:my-12 px-12 py-4 rounded-full text-white"
-          onClick={onContinue}
-        >
-          Continue
-        </button>
+        {state == "" ? (
+          <button
+            className="bg-slate-600 my-12 lg:my-12 px-12 py-4 rounded-full text-black"
+            // onClick={onContinue}
+          >
+            Continue
+          </button>
+        ) : (
+          <button
+            className="bg-black my-12 lg:my-12 px-12 py-4 rounded-full text-white"
+            onClick={onContinue}
+          >
+            Continue
+          </button>
+        )}
       </div>
     </div>
   );
