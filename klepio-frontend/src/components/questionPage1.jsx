@@ -9,6 +9,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
   const onSelect = (value) => {
     setState(value);
   };
+  console.log(state)
   const lastOption = options[options.length - 1];
   return (
     <div className="relative h-full w-full">
@@ -76,7 +77,7 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
         )}
         {state == "" ? (
           <button
-            className="bg-slate-600 my-12 lg:my-12 px-12 py-4 rounded-full text-black"
+            className="bg-white my-12 lg:my-12 px-12 py-4 rounded-full text-slate-400"
             // onClick={onContinue}
           >
             Continue
