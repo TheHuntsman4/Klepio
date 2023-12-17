@@ -1,5 +1,6 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
+import { useState,useEffect } from "react";
 
 import { ButtonWithoutImage } from "../components";
 
@@ -11,6 +12,17 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
     setState(value);
   };
   const lastOption = options[options.length - 1];
+
+  const [buttonColour,setButtonColour]=useState();
+
+  useEffect(()=>{
+    if (state===''){
+      setButtonColour('bg-white text-slate-400')
+    }
+    else{
+      setButtonColour('text-white bg-black')
+    }
+  },[state])
   return (
     <div className="h-full w-full">
       <div className={`w-full h-screen flex flex-col justify-center items-center font-poppins text-black`}>
@@ -86,12 +98,13 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
             </div>
           </>
         )}
-        <button
-          className="bg-black mt-12 lg:my-12 px-12 py-4 rounded-full text-white"
-          onClick={onContinue}
-        >
-          Continue
-        </button>
+          <button
+            className={`${buttonColour} my-12 lg:my-12 px-12 py-4 rounded-full transition duration-500 ease-in-out`} 
+            onClick={state ?  onContinue : null}
+            disabled={!state}
+          >
+            Continue
+          </button>   
       </div>
     </div>
   );

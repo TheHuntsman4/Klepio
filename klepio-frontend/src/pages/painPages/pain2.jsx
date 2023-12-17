@@ -100,7 +100,7 @@ const Pain2 = () => {
           setState={setSeverity}
           onContinue={onContinue}
           onPrevious={onPrevious}
-          question={
+          question={  
             "3. How would you best describe the Severity of the Pain you are experiencing?"
           }
         />

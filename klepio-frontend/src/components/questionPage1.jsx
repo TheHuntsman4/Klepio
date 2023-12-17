@@ -1,6 +1,7 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
 import { ButtonWithImage } from "../components";
+import { useState,useEffect } from "react";
 
 const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
   const isDesktopOrLaptop = useMediaQuery({
@@ -11,6 +12,16 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
   };
   console.log(state)
   const lastOption = options[options.length - 1];
+  const [buttonColour,setButtonColour]=useState();
+
+  useEffect(()=>{
+    if (state===''){
+      setButtonColour('bg-white text-slate-400')
+    }
+    else{
+      setButtonColour('text-white bg-black')
+    }
+  },[state])
   return (
     <div className="relative h-full w-full">
       <div
@@ -75,21 +86,13 @@ const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
             </div>
           </>
         )}
-        {state == "" ? (
           <button
-            className="bg-white my-12 lg:my-12 px-12 py-4 rounded-full text-slate-400"
-            // onClick={onContinue}
+            className={`${buttonColour} my-12 lg:my-12 px-12 py-4 rounded-full transition duration-500 ease-in-out`} 
+            onClick={state ?  onContinue : null}
+            disabled={!state}
           >
             Continue
-          </button>
-        ) : (
-          <button
-            className="bg-black my-12 lg:my-12 px-12 py-4 rounded-full text-white"
-            onClick={onContinue}
-          >
-            Continue
-          </button>
-        )}
+          </button>   
       </div>
     </div>
   );
