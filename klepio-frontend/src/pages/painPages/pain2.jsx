@@ -96,7 +96,7 @@ const Pain2 = () => {
       >
         <QuestionPage1
           options={options2}
-          state={nature}
+          state={severity}
           setState={setSeverity}
           onContinue={onContinue}
           onPrevious={onPrevious}
@@ -112,7 +112,7 @@ const Pain2 = () => {
       >
         <QuestionPage1
           options={options3}
-          state={nature}
+          state={onset}
           setState={setOnset}
           onContinue={onContinue}
           question={"4. When did you start experiencing pain?"}
@@ -125,7 +125,7 @@ const Pain2 = () => {
       >
         <QuestionPage2
           options={options4}
-          state={nature}
+          state={worse}
           setState={setWorse}
           onContinue={onContinue}
           question={"5. Which among the following Worsens the Pain?"}
