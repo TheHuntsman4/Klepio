@@ -12,7 +12,7 @@ import {
   Swelling1,
   Ulcer1,
   Common1,
-} from "./pages"; 
+} from "./pages";
 
 function App() {
   return (

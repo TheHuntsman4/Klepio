@@ -9,7 +9,7 @@ import { NavBar } from "../components";
 const LandingPage = () => {
   const naviagte = useNavigate();
   const onContinue = () => {
-    naviagte("/");
+    naviagte("/diagnosis");
   };
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1224px)",
