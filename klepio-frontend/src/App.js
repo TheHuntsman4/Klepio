@@ -27,7 +27,7 @@ function App() {
             </>
           }
         />
-        <Route
+        {/* <Route
           path="/home"
           element={
             <>
@@ -35,7 +35,7 @@ function App() {
               <HomePage />
             </>
           }
-        />
+        /> */}
         <Route path="/diagnose" element={<DiagnoseStartPage />} />
         <Route path="/diagnose/pain" element={<Pain1 />} />
         <Route path="/diagnose/pain2" element={<Pain2 />} />
