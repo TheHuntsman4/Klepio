@@ -103,10 +103,11 @@ const DiagnoseStartPage = () => {
             </div>
             <div className="w-1/2 flex justify-center items-center p-4">
               <ButtonWithImage
-                id="last"
+                id={2}
                 title={lastOption.title}
                 image={lastOption.image}
-                onClick={() => setChiefComplaint(lastOption.code)}
+                onClick={() => handleButtonClick(2)}
+                isSelected={selectedButtonId === 2}
               />
             </div>
           </>
