@@ -12,8 +12,13 @@ const DiagnoseStartPage = () => {
   const isDesktopOrLaptop = useMediaQuery({
     query: "(min-device-width: 1024px)",
   });
+  
   const [chiefComplaint, setChiefComplaint] = useState("");
+  const [selectedButtonId, setSelectedButtonId] = useState(null);
+  console.log(selectedButtonId)
+  
   let answers = {};
+  
   const onContinue = () => {
     answers = { ...answers, "Chief_complaint": chiefComplaint };
     console.log(answers);
@@ -26,6 +31,7 @@ const DiagnoseStartPage = () => {
     const NavigateUlcer = () => {
       navigate("/diagnose/ulcer", { state: { answers: answers } });
     };
+    
     if (answers.hasOwnProperty("Chief_complaint")) {
       switch (chiefComplaint) {
         case "1":
@@ -39,9 +45,17 @@ const DiagnoseStartPage = () => {
           break;
       }
     } else {
-      console.log("selection an option");
+      console.log("select an option");
     }
   };
+
+  const handleButtonClick = (id) => {
+
+    setSelectedButtonId(id);
+    setChiefComplaint((id+1).toString());
+    
+  };
+  
   const lastOption = options[options.length - 1];
 
   return (
@@ -65,7 +79,8 @@ const DiagnoseStartPage = () => {
                     id={key}
                     title={option.title}
                     image={option.image}
-                    onClick={() => setChiefComplaint(option.code)}
+                    onClick={() => handleButtonClick(key)}
+                    isSelected={selectedButtonId === key}
                   />
                 );
               })}
@@ -80,7 +95,8 @@ const DiagnoseStartPage = () => {
                     id={key}
                     title={option.title}
                     image={option.image}
-                    onClick={() => setChiefComplaint(option.code)}
+                    onClick={() => handleButtonClick(key)}
+                    isSelected={selectedButtonId === key}
                   />
                 );
               })}

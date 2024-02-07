@@ -20,7 +20,7 @@ const HomePage = () => {
           </p>
           <button className="w-1/2 lg:w-1/2 mt-6 bg-black text-white rounded-full px-6 lg:px-12 py-2 text-sm ">
             Try It Out Today
-          </button>
+          </button> 
         </div>
       </div>
     </div>

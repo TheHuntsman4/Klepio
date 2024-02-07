@@ -1,11 +1,13 @@
 import React from "react";
 import { useState } from "react";
 
-const ButtonWithImage = ({ onClick, title, image, id }) => {
+const ButtonWithImage = ({ onClick, title, image, id, isSelected }) => {
   const [select, setSelect] = useState(false);
 
   const onSelect = () => {
-    setSelect(!select);
+    if(onClick){
+      onClick(id)
+    }
   };
 
   return (
@@ -19,7 +21,7 @@ const ButtonWithImage = ({ onClick, title, image, id }) => {
       id={id}
       className={`
         w-full flex flex-col items-center p-4 bg-white rounded-3xl sm:p-8
-        ${select ? "border-4 border-black" : ""}
+        ${isSelected ? "border-4 border-black" : ""}
       `}
     >
       <img src={image} className="w-1/2 h-auto mb-2" alt={title} />
