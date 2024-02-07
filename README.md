@@ -27,7 +27,7 @@ This collaborative effort with dental practitioners ensures that Klepio's AI mod
 1. Visit the Klepio website at [https://klepio.vercel.app/](https://klepio.vercel.app/)
 2. Select the symptoms you are experiencing for tailored diagnosis.
 3. Gain immedaite feedback and diagnosis based on the AI's intelligent evaluation.
-4. Download a PDF of the results.(Work.In.Progress)
+4. Download a PDF of the results.(Coming Soon!!)
 
 ## TROUBLESHOOTING
 
