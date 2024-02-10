@@ -5,7 +5,6 @@ import SinglePhone from "../assets/nonicons/SinglePhone.png";
 const HomePage = () => {
   return (
     <div className="h-full w-full flex flex-col justify-center items-center bg-klepio-green">
-      {/* This is the component */}
       <div className="w-full flex flex-col lg:flex-row-reverse justify-center items-center">
         <div className="w-full flex justify-center items-center p-4">
           <img src={TeethSVG} alt="Teeth" width={250} className="md:width-600"/>
