@@ -1,6 +1,6 @@
 import React from "react";
 import { useMediaQuery } from "react-responsive";
-import { ButtonWithImage } from "../components";
+import { ButtonWithImage } from ".";
 import { useState,useEffect } from "react";
 
 const QuestionPage1 = ({ options, question, state, setState, onContinue }) => {
