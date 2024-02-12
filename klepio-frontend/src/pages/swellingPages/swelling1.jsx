@@ -69,6 +69,7 @@ const Swelling1 = () => {
   const onPrevious = () => {
     console.log("Previous");
   };
+
   return (
     <div className="relative h-full min-h-screen">
       <img
