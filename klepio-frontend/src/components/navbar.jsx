@@ -1,4 +1,4 @@
-import { NavDesktop, NavMobile } from "../components";
+import { NavDesktop, NavMobile } from ".";
 import { useMediaQuery } from "react-responsive";
 
 const Navbar = () => {
