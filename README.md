@@ -33,4 +33,7 @@ This collaborative effort with dental practitioners ensures that Klepio's AI mod
 
 1. 'Continue' button doesn't work
 
-        Fix: Wait for approximately 30 seconds and try clicking the button again.  
+        Fix: Wait for approximately 30 seconds and try clicking the button again.
+
+## License
+[GNU AGPLv3.0](LICENSE)
