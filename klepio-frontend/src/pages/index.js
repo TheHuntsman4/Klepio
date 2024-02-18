@@ -1,7 +1,7 @@
-export {default as LandingPage} from './LandingPage';
-export {default as HomePage} from './HomePage';
-export {default as DiagnoseStartPage} from './DiagnoseStartPage';
-export {default as ResultsPage} from './ResultsPage'
+export {default as LandingPage} from './landingPage';
+export {default as HomePage} from './homePage';
+export {default as DiagnoseStartPage} from './diagnoseStartPage';
+export {default as ResultsPage} from './resultsPage'
 export {default as Pain1} from './painPages/pain1';
 export {default as Pain2} from './painPages/pain2';
 export {default as Pain3} from './painPages/pain3';
