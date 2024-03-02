@@ -17,7 +17,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <div className="relative h-screen w-full">
+      <div className="relative h-screen w-full overflow-hidden">
         <img
           src={isDesktopOrLaptop ? LandingBGDesktop : LandingBGMobile}
           className="absolute top-0 left-0 w-full h-screen object-cover -z-10"
