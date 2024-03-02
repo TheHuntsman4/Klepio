@@ -1,6 +1,8 @@
 name: server-ping-job
 
 on:
+  schedule:
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -22,4 +24,4 @@ jobs:
           python -m pip install requests
 
       - name: Run Python script
-        run: python ./serverPinger.py  
+        run: python ./GHA-scripts/serverPinger.py
