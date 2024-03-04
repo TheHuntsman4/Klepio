@@ -65,7 +65,5 @@ Before you begin, make sure you have the following installed on your system:
      npm start
 Congratulations you have a working instance of Klepio ready for use.
 
-
-
 ## License
 [GNU AGPLv3.0](LICENSE)
