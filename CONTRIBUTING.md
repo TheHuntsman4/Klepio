@@ -1,6 +1,6 @@
 # Contributing to Klepio
 
-Thank you for considering contributing to [Your Project Name]! We appreciate your interest and support.
+Thank you for considering contributing to Klepio! We appreciate your interest and support.
 
 ## Table of Contents
 - [Code of Conduct](#code-of-conduct)
