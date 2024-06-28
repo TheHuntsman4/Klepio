@@ -44,9 +44,6 @@ const ResultsPage = () => {
           <button className="bg-black rounded-full my-4 lg:mr-4  px-12 py-4 text-white text-lg">
             <Link to="/diagnose">Retake Test</Link>
           </button>
-          <button className="bg-black rounded-full my-4 lg:mr-4 px-12 py-4 text-white text-lg">
-            <Link to="/results">Download Results</Link>
-          </button>
         </div>
       </div>
     </div>
