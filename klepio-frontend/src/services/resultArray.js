@@ -28,14 +28,14 @@ const results = [
         "https://www.stamforddentalarts.com/wp-content/uploads/2021/12/Pulpitis.jpg",
     },
     {
-      title: "Acute Irreversible Pulpitis with acute Gingivitis",
+      title: "Acute Irreversible Pulpitis",
       description:
         "inflammation affecting both the gums and the dental pulp. The gums exhibit the swelling, redness and bleeding of acute gingivitis. The dental pulp shows symptoms of irreversible pulpitis like spontaneous and lingering pain. The combination indicates an advanced stage of gum disease and tooth decay allowing bacteria and inflammation to spread. Treatment requires professional dental cleaning for the gingivitis plus a root canal for the infected pulp. Prompt treatment is important to prevent further dental abscesses, tooth loss, and spreading infection. Maintaining diligent oral hygiene and regular dental care can prevent these acute dental conditions.",
       image:
         "https://www.stamforddentalarts.com/wp-content/uploads/2021/12/Pulpitis.jpg",
     },
     {
-      title: "Acute Irreversible Pulpitis with extra oral swelling",
+      title: "Acute Irreversible Pulpitis",
       description:
         "Acute irreversible pulpitis with extra oral swelling indicates the inflammation and infection has spread beyond the tooth and dental pulp. Swelling of the cheek, lips, or face indicates a dental abscess is forming as pus builds up in the jaw and nearby tissues. Severe, throbbing pain may also radiate to other areas. Treatment requires urgent dental care including antibiotics, drainage of the abscess, and root canal therapy or tooth extraction to remove the source of infection.",
       image:
@@ -132,7 +132,7 @@ const results = [
       image: "https://www.researchgate.net/publication/354865230/figure/fig2/AS:1072740337475586@1632772635732/nflammation-process-induced-Recurrent-Aphthous-Stomatitis-RAS.png",
     },
     {
-      title: "Extra oral swelling with Acute Irreversible Pulpitis",
+      title: "Acute Irreversible Pulpitis",
       description:
         "When acute irreversible pulpitis is accompanied by extra oral swelling, the infection has extended beyond the tooth roots and dental pulp. Significant swelling of the cheek, lips or facial tissues indicates a spreading infection called a dental abscess. Along with the swelling, symptoms include severe, throbbing pain that may radiate along the jaw and to the ear or neck on the affected side. This condition requires prompt dental treatment including potent antibiotics and drainage of the abscess. Root canal treatment or extraction of the infected tooth will also be needed to remove the original source of infection. Left untreated, the infection can continue spreading deeper through tissues or into the bloodstream with dangerous complications. The swelling and pain should resolve once the tooth is treated or removed and antibiotics administered to control the infection.",
       image:
